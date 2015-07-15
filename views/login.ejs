@@ -1,0 +1,17 @@
+<% include layout/header.ejs %>
+<% include nav/topbar.ejs %>
+
+<div class="row">
+    <div class="col-lg-3 col-lg-offset-3 col-xs-12">
+        <h1><%= tittle %></h1>
+        <form action="/login" method="post">
+            name:<input name="name" class="form-control">
+            <br><br>
+            psw:<input name="psw" type="password" class="form-control">
+            <br><br>
+            <button type="submit" class="btn btn-success">submit</button>
+        </form>
+
+        <% include layout/footer.ejs %>
+    </div>
+</div>
