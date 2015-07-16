@@ -26,8 +26,12 @@ UserModel.prototype.save = function (params, callback) {
     });
 };
 
-//
-//var user=new UserModel();
-//user.save({name:"sdfasdf",password:'123',email:'sdf'});
+UserModel.prototype.find = function (params, callback) {
+    mongooseModel.find({email: params.email}, function (err, docs) {
+            console.log(docs);
+        }
+    );
+};
 
+//
 module.exports = UserModel;
