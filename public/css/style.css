@@ -1,6 +1,10 @@
-
 img {
-    width:370px;
-    height: 220px;
+    width:340px;
+    height: 200px;
     border-radius: 25px;
+}
+
+h4{
+    color: #3550ad;
+    font-size: 20px;
 }

@@ -6,9 +6,11 @@ var router = express.Router();
 
 router.get('/', function (req, res, next) {
     res.render('game/game', {
-        tittle: 'game',
+        tittle: 'CocosJS Game',
         game1: '捕鱼达人',
-        game2: '饥饿超人'
+        introduce1: '使用cocos-js制作的小游戏，喜欢的话，多点几下呗',
+        game2: '饥饿超人',
+        introduce2:'这个是完全抄的 ，不敢放'
     });
 });
 

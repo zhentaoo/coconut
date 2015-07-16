@@ -2,16 +2,21 @@
 <% include nav/topbar.ejs %>
 
 <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-xs-12">
+        <h2><%= tittle %></h2>
+    </div>
+</div>
+<hr>
+<div class="row">
     <div class="col-lg-3 col-lg-offset-3 col-xs-12">
-        <h1><%= tittle %></h1>
+
         <form action="/login" method="post">
-            name:<input name="name" class="form-control">
+            name:<input name="name" class="form-control" required="required">
             <br><br>
-            psw:<input name="psw" type="password" class="form-control">
+            psw:<input name="psw" type="password" class="form-control" required="required">
             <br><br>
             <button type="submit" class="btn btn-success">submit</button>
         </form>
-
         <% include layout/footer.ejs %>
     </div>
 </div>
