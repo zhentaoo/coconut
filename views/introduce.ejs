@@ -1,0 +1,15 @@
+<% include layout/header.ejs %>
+<% include nav/topbar.ejs %>
+
+<hr>
+<div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-xs-12 myBorder myPadding">
+        <%
+        var length = introduce.length;
+        for(var i = 0;i < length;i++){
+        %>
+        <p><%= introduce[i] %></p>
+        <% } %>
+    </div>
+</div>
+<% include layout/footer.ejs %>

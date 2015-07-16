@@ -1,7 +1,7 @@
 img {
     width: 340px;
     height: 200px;
-    border-radius: 25px;
+    border-radius: 10px;
 }
 
 h4 {
@@ -11,8 +11,18 @@ h4 {
 
 .myBorder {
     background-color: #EEEFF0;
-    border-radius: 15px;
+    border-radius: 10px;
     border: 1px solid yellowgreen;;
+}
+
+.myPadding {
+    padding: 20px
+}
+
+.weixin {
+    width: 250px;
+    height: 250px;
+    border-radius: 10px;
 }
 
 body {
