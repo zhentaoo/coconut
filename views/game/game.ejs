@@ -7,31 +7,21 @@
     </div>
 </div>
 
+<%
+var length = game.length;
+for(var i = 0 ;i < length;i++){
+%>
 <div class="row">
     <br>
-    <div class="col-lg-2 col-lg-offset-2">
-        <h4><%= game1 %></h4>
+
+    <div class="col-lg-2 col-lg-offset-2 myBorder">
+        <h4><%= game[i] %></h4>
         <hr>
-        <p><%= introduce1 %></p>
+        <p><%= introduce[i] %></p>
     </div>
     <div class="col-lg-6 col-lg-offset-1">
-        <a href="/game/fishman"><img src="/img/fishman.png"></a>
+        <a href=<%= hrefUrl[i] %>><img src="<%= imgUrl[i] %>"></a>
     </div>
 </div>
-
-<div class="row">
-    <br>
-    <br>
-    <br>
-
-    <div class="col-lg-2 col-lg-offset-2">
-        <h4><%= game1 %></h4>
-        <hr>
-        <p><%= introduce1 %></p>
-    </div>
-    <div class="col-lg-6 col-lg-offset-1">
-        <a href="/game/fishman"><img src="/img/fishman.png"></a>
-    </div>
-</div>
-
+<% } %>
 <% include ../layout/footer.ejs %>

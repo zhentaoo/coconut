@@ -1,10 +1,20 @@
 img {
-    width:340px;
+    width: 340px;
     height: 200px;
     border-radius: 25px;
 }
 
-h4{
+h4 {
     color: #3550ad;
     font-size: 20px;
+}
+
+.myBorder {
+    background-color: #EEEFF0;
+    border-radius: 15px;
+    border: 1px solid yellowgreen;;
+}
+
+body {
+
 }
