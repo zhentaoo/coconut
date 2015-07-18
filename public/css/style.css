@@ -28,3 +28,11 @@ h4 {
 body {
 
 }
+
+.avatar {
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-right: 10px;
+    width: 35px;
+    height: 35px;
+}

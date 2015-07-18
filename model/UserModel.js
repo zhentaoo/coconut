@@ -19,19 +19,33 @@ UserModel.prototype.save = function (params, callback) {
     var mongooseEntity = new mongooseModel(doc);
     mongooseEntity.save(function (error) {
         if (error) {
-            console.log(error);
+            callback(error);
         } else {
-            console.log('saved OK!');
         }
     });
 };
 
-UserModel.prototype.find = function (params, callback) {
-    mongooseModel.find({email: params.email}, function (err, docs) {
-            console.log(docs);
-        }
-    );
+UserModel.prototype.findByEmail = function (email, callback) {
+    mongooseModel.find({email: email}, function (err, docs) {
+        callback(err, docs);
+    });
 };
 
-//
+/*find test*/
+//mongooseModel.find({email: 'sdfxxadsf'}, function (err, docs) {
+//        console.log(docs);
+//    }
+//);
+
+/*save test*/
+//var doc = {name: 1, password: 2, email: 3};
+//var mongooseEntity = new mongooseModel(doc);
+//mongooseEntity.save(function (error) {
+//    if (error) {
+//        console.log(error);
+//    } else {
+//        console.log('saved OK!');
+//    }
+//});
+
 module.exports = UserModel;

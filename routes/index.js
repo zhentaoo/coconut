@@ -1,5 +1,7 @@
 var express = require('express');
 var router = express.Router();
+var RegisterModules = require('../modules/RegisterModules.js');
+var LoginModules = require("../modules/LoginModules.js");
 
 router.get('/', function (req, res, next) {
     res.redirect('/game');
@@ -48,36 +50,54 @@ router.get('/contact', function (req, res, next) {
     });
 });
 
-
 router.get('/login', function (req, res, next) {
-    res.render('login', {tittle: 'Login'});
+    res.render('login', {
+        message: null
+    });
 });
 
 router.post('/login', function (req, res, next) {
-    console.log(req.body);
-    var name = req.body.name;
-    var psw = req.body.psw;
+    var password = req.body.password;
+    var email = req.body.email;
 
-    if (name == 'leo' && psw == '123') {
-        res.send(JSON.stringify(req.body));
-    } else {
-        res.redirect('/login');
-    }
+    var login = new LoginModules();
+    login.login(email, password, function (data, docs) {
+        if (data) {
+            req.session.name = docs.name;
+            res.redirect('/');
+        } else {
+            req.session.message = '';
+            res.redirect('/login');
+        }
+    });
 });
 
 router.get('/register', function (req, res, next) {
-    res.render('register', {tittle: 'register'});
+    res.render('register', {
+        tittle: 'register',
+        message: req.session.message
+    });
 });
 
 router.post('/register', function (req, res, next) {
     var name = req.body.name;
     var password = req.body.password;
     var email = req.body.email;
+    var register = new RegisterModules();
 
-    var register = require('../modules/DealRegister');
-    var registerModel = new register();
-    registerModel.AddUser({name: name, password: password, email: email});
-    res.send(JSON.stringify(req.body) + "register ok");
+    //console.log(name, password, email);
+
+    register.AddUser({name: name, password: password, email: email}, function (data) {
+        //console.log(data);
+        if (data) {
+            req.session.user = name;
+            console.log('route index save ok');
+        } else {
+            req.session.message = '<font color="red">用户名或密码不正确</font>';
+            console.log('save error');
+            return res.redirect('/register');
+        }
+    });
 });
 
 module.exports = router;

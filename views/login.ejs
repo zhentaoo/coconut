@@ -1,22 +1,22 @@
-<% include layout/header.ejs %>
-<% include nav/topbar.ejs %>
+<% include layout/header %>
+<% include nav/topbar %>
 
 <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-xs-12">
-        <h2><%= tittle %></h2>
+        <h2>Login</h2>
     </div>
 </div>
 <hr>
 <div class="row">
     <div class="col-lg-3 col-lg-offset-3 col-xs-12">
-
+        <%= message %>
         <form action="/login" method="post">
-            name:<input name="name" class="form-control" required="required">
+            email:<input name="email" class="form-control" type="email" required="required">
             <br><br>
-            psw:<input name="psw" type="password" class="form-control" required="required">
+            psw:<input name="password" type="password" class="form-control" required="required">
             <br><br>
             <button type="submit" class="btn btn-success">submit</button>
         </form>
     </div>
 </div>
-<% include layout/footer.ejs %>
+<% include layout/footer %>
