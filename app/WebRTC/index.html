@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="js/SimpleWebRTC.js"></script>
+</head>
+<body>
+<video height="300" id="localVideo"></video>
+<div id="remotesVideos"></div>
+</body>
+</html>
+<script>
+    var webrtc = new SimpleWebRTC({
+        localVideoEl: 'localVideo',
+        remoteVideosEl: 'remotesVideos',
+        autoRequestMedia: true
+    });
+
+    webrtc.on('readyToCall', function () {
+        // you can name it anything
+        webrtc.joinRoom('your awesome room name');
+    });
+
+</script>

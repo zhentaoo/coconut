@@ -29,7 +29,7 @@ router.get('/introduce', function (req, res, next) {
 router.get('/contact', function (req, res, next) {
     res.render('contact', {
         tittle: 'contact me',
-        imgUrl: "/img/weixin.png",
+        imgUrl: "public/img/weixin.png",
         content: [
             "sdfasdfasdfadf",
             "sdfasdfasdfadf",

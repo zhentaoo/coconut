@@ -14,7 +14,7 @@ router.get('/', function (req, res, next) {
             '使用cocos-js制作的小游戏，喜欢的话，多点几下呗'
         ],
         imgUrl: [
-            "/img/fishman.png"
+            "public/img/fishman.png"
         ],
         hrefUrl: [
             "/game/fishman"
