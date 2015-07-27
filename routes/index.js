@@ -9,30 +9,9 @@ router.get('/', function (req, res, next) {
 
 router.get('/introduce', function (req, res, next) {
     res.render('introduce', {
-        tittle: [],
-        introduce: [
-            '阿桑地方',
-            '啊的说法撒点粉',
-            '撒旦法时代',
-            '许昌县从',
-            '撒发生地方',
-            '现场直播V下次V吧',
-            '撒点粉为人父',
-            '啊的说法分',
-            '时代发生地方规范',
-            '从vbs地方',
-            '文认为'
-        ]
-    });
-});
-
-router.get('/contact', function (req, res, next) {
-    res.render('contact', {
         tittle: 'contact me',
         imgUrl: "public/img/weixin.png",
         content: [
-            "sdfasdfasdfadf",
-            "sdfasdfasdfadf",
             "sdfasdfasdfadf",
             "sdfasdfasdfadf",
             "sdfasdfasdfadf",
