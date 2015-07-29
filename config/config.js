@@ -1,11 +1,8 @@
 var config = {};
 
 config.db = {
-    host: '127.0.0.1',
-    port: 27017,
-    dbname: 'Coconut',
-    pass: 123,
-    user: 'root'
+    host: 'mongodb://127.0.0.1:27017/',
+    dbname: 'coconut'
 };
 
 config.route = {
