@@ -1,7 +1,5 @@
 var express = require('express');
 var router = express.Router();
-var RegisterModules = require('../modules/RegisterModules.js');
-var LoginModules = require("../modules/LoginModules.js");
 
 router.get('/', function (req, res, next) {
     res.redirect('/game');
@@ -53,7 +51,7 @@ router.post('/login', function (req, res, next) {
 
 router.get('/register', function (req, res, next) {
     res.render('register', {
-        tittle: 'register',
+        tittle: '注册',
         message: req.session.message
     });
 });

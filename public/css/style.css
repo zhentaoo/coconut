@@ -12,7 +12,21 @@ h4 {
 .myBorder {
     background-color: #EEEFF0;
     border-radius: 10px;
-    border: 1px solid yellowgreen;;
+    height: 200px;
+    border: 1px solid yellowgreen;
+}
+
+.myBox {
+    width: 320px;
+    height: 160px;
+}
+
+.myLeftBorder {
+    border-left: 1px solid silver;
+}
+
+.myRightBorder {
+    border-right: 1px solid silver;
 }
 
 .myPadding {
@@ -34,4 +48,21 @@ body {
     margin-right: 10px;
     width: 35px;
     height: 35px;
+}
+
+.logo {
+    margin-top: 7px;
+    margin-right: 20px;
+    width: 125px;
+    height: 30px;
+}
+
+.font-logo {
+    color: #1b9aff;
+    font-size: 30px;
+    margin-right: 30px;
+    margin-top: 3px;
+}
+
+h2 {
 }

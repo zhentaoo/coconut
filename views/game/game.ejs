@@ -1,26 +1,29 @@
 <% include ../layout/header %>
 <% include ../nav/topbar %>
 
-<div class="row">
-    <div class="col-lg-8 col-lg-offset-2 col-xs-12">
-        <h2><%= tittle %></h2>
-    </div>
-</div>
-
+<!--<div class="row">-->
+<!--<div class="col-lg-8 col-lg-offset-2 col-xs-12">-->
+<!--<h2><%= tittle %></h2>-->
+<!--</div>-->
+<!--</div>-->
+<!---->
 <%
 var length = game.length;
 for(var i = 0 ;i < length;i++){
 %>
-<div class="row">
-    <br>
-
-    <div class="col-lg-2 col-lg-offset-2 myBorder">
-        <h4><%= game[i] %></h4>
-        <hr>
-        <p><%= introduce[i] %></p>
+<div class="row" style="margin-top: 50px">
+    <div class="col-xs-6">
+        <div class="col-lg-5 col-lg-offset-5 myBorder">
+            <%= introduce[i] %>
+        </div>
     </div>
-    <div class="col-lg-6 col-lg-offset-1">
-        <a href=<%= hrefUrl[i] %>><img src="<%= imgUrl[i] %>"></a>
+
+    <div class="col-xs-6">
+        <div class="row">
+            <div class="col-lg-5 col-lg-offset-1  myBox">
+                <a href=<%= hrefUrl[i] %>><img src="<%= imgUrl[i] %>"></a>
+            </div>
+        </div>
     </div>
 </div>
 <% } %>
