@@ -37,7 +37,6 @@ router.post('/login', function (req, res, next) {
     var password = req.body.password;
     var email = req.body.email;
 
-    var login = new LoginModules();
     login.login(email, password, function (data, docs) {
         if (data) {
             req.session.name = docs.name;
@@ -63,7 +62,6 @@ router.post('/register', function (req, res, next) {
     var register = new RegisterModules();
 
     //console.log(name, password, email);
-
     register.AddUser({name: name, password: password, email: email}, function (data) {
         //console.log(data);
         if (data) {

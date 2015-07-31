@@ -1,7 +1,7 @@
 img {
     width: 340px;
     height: 200px;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 h4 {
@@ -10,23 +10,24 @@ h4 {
 }
 
 .myBorder {
-    background-color: #EEEFF0;
-    border-radius: 10px;
-    height: 200px;
-    border: 1px solid yellowgreen;
+    background-color: #f0fbe8;
+    border-radius: 5px;
+    /*border: 1px solid yellowgreen;*/
 }
 
 .myBox {
-    width: 320px;
-    height: 160px;
+    background-color: #f0fbe8;
+    /*border: 1px solid yellowgreen;*/
+    min-height: 200px;
+    border-radius: 5px;
 }
 
 .myLeftBorder {
-    border-left: 1px solid silver;
+    /*border-left: 1px solid silver;*/
 }
 
 .myRightBorder {
-    border-right: 1px solid silver;
+    /*border-right: 1px solid silver;*/
 }
 
 .myPadding {
@@ -37,9 +38,6 @@ h4 {
     width: 250px;
     height: 250px;
     border-radius: 10px;
-}
-
-body {
 }
 
 .avatar {
@@ -61,8 +59,28 @@ body {
     color: #1b9aff;
     font-size: 30px;
     margin-right: 30px;
-    margin-top: 3px;
 }
 
-h2 {
+a {
+    color: #1b9aff;
+}
+
+.topBarFont {
+    color: #1b9aff;
+    font-size: 17px;
+}
+
+.bbsRight {
+    /*border: 1px solid yellowgreen;*/
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #e5ffef;
+}
+
+.bbsLeft {
+    background-color: #e5ffef;
+    padding: 30px;
+    padding-left: 50px;
+    /*border: 1px solid yellowgreen;*/
+    border-radius: 5px;
 }
