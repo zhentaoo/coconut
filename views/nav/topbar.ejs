@@ -18,8 +18,17 @@
                 <li><a href="/chat" class="topBarFont">聊天</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right ">
+
+                <% if(!session.isAuth){ %>
                 <li><a href="/login" class="topBarFont">登录</a></li>
                 <li><a href="/register" class="topBarFont">注册</a></li>
+                <% }else{ %>
+                <li><a href="#" class="topBarFont">
+                        <%= session.name %>
+                    </a></li>
+                <li><a href="/logout" class="topBarFont">
+                        退出</a></li>
+                <% } %>
             </ul>
         </div>
     </div>

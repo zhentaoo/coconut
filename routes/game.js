@@ -24,13 +24,14 @@ router.get('/', function (req, res, next) {
             "/game/fishman",
             "/game/hero"
         ],
-        message: req.session.name
+        session: req.session
     });
 });
 
 router.get('/fishman', function (req, res, next) {
     res.render('game/fishman', {
-        tittle: 'game'
+        tittle: 'game',
+        session: req.session
     });
 });
 

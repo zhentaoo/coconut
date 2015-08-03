@@ -9,7 +9,11 @@
 
     <div class="col-lg-3">
         <div class="block">
-        <% include ../plugins/login.html %>
+            <% if(!session.isAuth){ %>
+            <% include ../plugins/login.html %>
+            <% }else{ %>
+            <% include ../plugins/personal.ejs %>
+            <% } %>
         </div>
     </div>
 </div>

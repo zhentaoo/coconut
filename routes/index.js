@@ -11,9 +11,9 @@ router.get('/error', function (req, res, next) {
 
 router.get('/login', function (req, res, next) {
     res.render('login', {
-        message: req.session.message
+        message: req.session.message,
+        session: req.session
     });
-    req.session.destroy();
 });
 
 router.post('/login', function (req, res, next) {
@@ -25,10 +25,15 @@ router.post('/login', function (req, res, next) {
             res.redirect('404');
         } else {
             console.log(docs);
+            var time = docs.time.toLocaleString();
             if (password == docs.password) {
                 req.session.name = docs.name;
                 req.session.email = docs.email;
-                req.session.status = 1;
+                req.session.isAuth = 1;
+                req.session.time = time;
+                req.session.id = docs._id;
+                req.session.follower = docs.follower;
+
                 res.redirect('/game');
             } else {
                 req.session.message = '<br><br><font color="red">用户名或密码错误,请重新登录</font><br>';
@@ -41,8 +46,7 @@ router.post('/login', function (req, res, next) {
 router.get('/register', function (req, res, next) {
     res.render('register', {
         tittle: '注册',
-        message: req.session.message,
-        registerOk: ''
+        session: req.session
     });
 });
 
@@ -57,10 +61,11 @@ router.post('/register', function (req, res, next) {
         email: email,
         password: password
     }, function (err, docs) {
+        req.session.message = '<br><br><font color="green">注册成功,请登录</font><br>';
+
         res.render('register', {
             tittle: '注册',
-            registerOk: '',
-            message: '<br><br><font color="green">注册成功,请登录</font><br>'
+            session: req.session
         });
     });
 });
