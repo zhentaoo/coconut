@@ -58,7 +58,6 @@ h4 {
 .font-logo {
     color: #1b9aff;
     font-size: 30px;
-    margin-right: 30px;
 }
 
 a {
@@ -73,14 +72,13 @@ a {
 .bbsRight {
     /*border: 1px solid yellowgreen;*/
     border-radius: 5px;
-    padding: 10px;
+    padding: 20px;
     background-color: #e5ffef;
 }
 
 .bbsLeft {
     background-color: #e5ffef;
     padding: 30px;
-    padding-left: 50px;
     /*border: 1px solid yellowgreen;*/
     border-radius: 5px;
 }

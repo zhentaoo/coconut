@@ -1,11 +1,13 @@
 <% include ../layout/header %>
 <% include ../nav/topbar %>
-<div class="row" style="margin-top: 30px">
-    <div class="col-xs-7 col-xs-offset-1 bbsLeft">
+<div class="row">
+    <div class="col-xs-12 col-lg-8">
         <% include bbs.ejs %>
     </div>
+    <div class="col-lg-1">
 
-    <div class="col-xs-2 col-xs-offset-1 bbsRight">
+    </div>
+    <div class="col-lg-3">
         <% include ../plugins/login.html %>
     </div>
 </div>
