@@ -11,5 +11,9 @@ config.route = {
     get_userinfo_basic: 0,
     login: 1
 };
-
+config.session = {
+    secret: '123456',
+    key: 'coconut',
+    dbname: 'session'
+};
 module.exports = config;

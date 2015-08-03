@@ -5,7 +5,8 @@ var express = require('express');
 var router = express.Router();
 
 router.get('/', function (req, res, next) {
-    res.render('game/game', {
+    //res.send(req.session.name);
+    res.render('game/index', {
         tittle: 'CocosJS Game',
         game: [
             '捕鱼达人',
@@ -22,7 +23,8 @@ router.get('/', function (req, res, next) {
         hrefUrl: [
             "/game/fishman",
             "/game/hero"
-        ]
+        ],
+        message: req.session.name
     });
 });
 

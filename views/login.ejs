@@ -3,14 +3,11 @@
 
 <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-xs-12">
-        <!--<h2 color>登录</h2>-->
     </div>
 </div>
-<br>
-<br>
+<br><br>
 <div class="row">
-    <div class="col-lg-3 col-lg-offset-3 col-xs-12">
-        <%= message %>
+    <div class="col-lg-4 col-lg-offset-2 col-xs-12">
         <form action="/login" method="post">
             邮箱:<input name="email" class="form-control" type="email" required="required">
             <br><br>
@@ -18,6 +15,7 @@
             <br><br>
             <button type="submit" class="btn btn-success">登录</button>
         </form>
+        <%- message %>
     </div>
 </div>
 <% include layout/footer %>

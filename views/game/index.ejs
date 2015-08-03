@@ -1,0 +1,28 @@
+<% include ../layout/header %>
+<% include ../nav/topbar %>
+<%
+var length = game.length;
+for(var i = 0 ;i < length;i++){
+%>
+<div class="row">
+
+    <div class="col-xs-4">
+        <a href=<%= hrefUrl[i] %>><img src="<%= imgUrl[i] %>" style="width: 85%;"></a>
+    </div>
+    <div class="col-xs-4">
+        <div class="block">
+           <h4>介绍</h4>
+            <%= introduce[i] %>
+        </div>
+    </div>
+    <div class="col-xs-4">
+        <div class="block">
+            <h4>评论</h4>
+            <%= introduce[i] %>
+        </div>
+    </div>
+</div>
+<br>
+<hr><br>
+<% } %>
+<% include ../layout/footer %>

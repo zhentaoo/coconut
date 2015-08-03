@@ -48,16 +48,9 @@ h4 {
     height: 35px;
 }
 
-.logo {
-    margin-top: 7px;
-    margin-right: 20px;
-    width: 125px;
-    height: 30px;
-}
-
 .font-logo {
     color: #1b9aff;
-    font-size: 30px;
+    font-size: 27px;
 }
 
 a {
@@ -69,16 +62,13 @@ a {
     font-size: 17px;
 }
 
-.bbsRight {
-    /*border: 1px solid yellowgreen;*/
-    border-radius: 5px;
+.block {
+    background-color: #e5ffef;
     padding: 20px;
-    background-color: #e5ffef;
-}
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
 
-.bbsLeft {
-    background-color: #e5ffef;
-    padding: 30px;
-    /*border: 1px solid yellowgreen;*/
     border-radius: 5px;
 }

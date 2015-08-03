@@ -2,48 +2,38 @@ var express = require('express');
 var router = express.Router();
 
 router.get('/', function (req, res, next) {
-    res.redirect('/game');
+    res.redirect('game');
 });
 
-router.get('/introduce', function (req, res, next) {
-    res.render('introduce', {
-        tittle: 'contact me',
-        imgUrl: "public/img/weixin.png",
-        content: [
-            "sdfasdfasdfadf",
-            "sdfasdfasdfadf",
-            "sdfasdfasdfadf",
-            "sdfasdfasdfadf",
-            "sdfasdfasdfadf",
-            "sdfasdfasdfadf",
-            "sdfasdfasdfadf",
-            "sdfasdfasdfadf",
-            "sdfasdfasdfadf",
-            "sdfasdfasdfadf",
-            "sdfasdfasdfadf",
-            "sdfasdfasdfadf",
-            "sdfasdfasdfadf"
-        ]
-    });
+router.get('/error', function (req, res, next) {
+    res.render('error');
 });
 
 router.get('/login', function (req, res, next) {
     res.render('login', {
-        message: null
+        message: req.session.message
     });
+    req.session.destroy();
 });
 
 router.post('/login', function (req, res, next) {
     var password = req.body.password;
     var email = req.body.email;
-
-    login.login(email, password, function (data, docs) {
-        if (data) {
-            req.session.name = docs.name;
-            res.redirect('/');
+    var user = require('../model/index').User;
+    user.findOne({email: email}, function (err, docs) {
+        if (err) {
+            res.redirect('404');
         } else {
-            req.session.message = '';
-            res.redirect('/login');
+            console.log(docs);
+            if (password == docs.password) {
+                req.session.name = docs.name;
+                req.session.email = docs.email;
+                req.session.status = 1;
+                res.redirect('/game');
+            } else {
+                req.session.message = '<br><br><font color="red">用户名或密码错误,请重新登录</font><br>';
+                res.redirect('/login');
+            }
         }
     });
 });
@@ -51,7 +41,8 @@ router.post('/login', function (req, res, next) {
 router.get('/register', function (req, res, next) {
     res.render('register', {
         tittle: '注册',
-        message: req.session.message
+        message: req.session.message,
+        registerOk: ''
     });
 });
 
@@ -59,20 +50,24 @@ router.post('/register', function (req, res, next) {
     var name = req.body.name;
     var password = req.body.password;
     var email = req.body.email;
-    var register = new RegisterModules();
 
-    //console.log(name, password, email);
-    register.AddUser({name: name, password: password, email: email}, function (data) {
-        //console.log(data);
-        if (data) {
-            req.session.user = name;
-            console.log('route index save ok');
-        } else {
-            req.session.message = '<font color="red">用户名或密码不正确</font>';
-            console.log('save error');
-            return res.redirect('/register');
-        }
+    var user = require('../model/index').User;
+    user.create({
+        name: name,
+        email: email,
+        password: password
+    }, function (err, docs) {
+        res.render('register', {
+            tittle: '注册',
+            registerOk: '',
+            message: '<br><br><font color="green">注册成功,请登录</font><br>'
+        });
     });
+});
+
+router.get('/logout', function (req, res, next) {
+    req.session.destroy();
+    res.redirect('/game');
 });
 
 module.exports = router;
