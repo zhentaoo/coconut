@@ -25,7 +25,7 @@ router.post('/login', function (req, res, next) {
             res.redirect('404');
         } else {
             console.log(docs);
-            var time = docs.time.toLocaleString();
+            var time = new Date(parseInt(docs.time)).toLocaleString();
             if (password == docs.password) {
                 req.session.name = docs.name;
                 req.session.email = docs.email;
