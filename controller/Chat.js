@@ -1,3 +1,5 @@
-/**
- * Created by leo on 2015/8/4.
- */
+exports.index = function (req, res, next) {
+    res.render('chat/index', {
+        session: req.session
+    });
+};

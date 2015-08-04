@@ -9,12 +9,8 @@ var session = require('express-session');
 var config = require('./config/config.js');
 
 /*route*/
-var index = require('./routes/index');
-var users = require('./routes/users');
-var game = require('./routes/game');
-var bbs = require('./routes/bbs');
-var software = require('./routes/software');
-var chat = require('./routes/chat');
+var webRoute = require('./routes/webRoute');
+var apiRoute = require('./routes/apiRoute');
 
 /*middleware*/
 var app = express();
@@ -35,12 +31,8 @@ app.use(session({
 }));
 
 /*router*/
-app.use('/', index);
-app.use('/users', users);
-app.use('/game', game);
-app.use('/bbs', bbs);
-app.use('/software', software);
-app.use('/chat', chat);
+app.use('/', webRoute);
+app.use('/api', apiRoute);
 
 /*Create HTTP server.*/
 http.createServer(app).listen(app.get('port'), function () {
