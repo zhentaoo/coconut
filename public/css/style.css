@@ -4,11 +4,6 @@ img {
     border-radius: 5px;
 }
 
-h4 {
-    color: #3550ad;
-    font-size: 20px;
-}
-
 .myBorder {
     background-color: #f0fbe8;
     border-radius: 5px;
@@ -68,7 +63,7 @@ a {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 
     border-radius: 5px;
 }

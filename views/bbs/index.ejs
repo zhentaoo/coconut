@@ -8,6 +8,14 @@
     </div>
 
     <div class="col-lg-3">
+        <% if(session.isAuth){ %>
+        <div class="block">
+            <a href="/bbs/sendArticle">
+                <button class="btn btn-info" style="width: 225px">发帖</button>
+            </a>
+        </div>
+        <% } %>
+
         <div class="block">
             <% if(!session.isAuth){ %>
             <% include ../plugins/login.html %>
