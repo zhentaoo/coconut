@@ -5,6 +5,7 @@ var chat = require('../controller/Chat');
 var game = require('../controller/Game');
 var software = require('../controller/Software');
 var user = require('../controller/User');
+var auth = require('../middlewares/Auth');
 var router = express.Router();
 
 /*主页index*/
@@ -18,8 +19,9 @@ router.get('/logout', index.logout);
 
 /*论坛*/
 router.get('/bbs', bbs.index);
-router.get('/bbs/sendArticle', bbs.showSendArticle);
-router.post('/bbs/sendArticle', bbs.sendArticle);
+router.get('/bbs/sendArticle', auth.userAuth, bbs.showSendArticle);
+router.post('/bbs/sendArticle', auth.userAuth, bbs.sendArticle);
+router.get('/bbs/Article',bbs.showOneArticle);
 
 /*聊天*/
 router.get('/chat', chat.index);
