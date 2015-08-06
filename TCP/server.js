@@ -22,8 +22,6 @@ exports.runs = function (io) {
     var connectionList = {};
     /*io.sockets.on函数接受字符串'connection'作为客户端发起连接的事件，当连接成功后，调用带有socket参数的回调函数*/
     io.sockets.on('connection', function (socket) {
-        console.log('sdf');
-
         /*当客户端连接时：保存socketId*/
         var socketId = socket.id;
         connectionList[socketId] = {
@@ -31,7 +29,9 @@ exports.runs = function (io) {
         };
 
         /*有一个新的连接时：向所有客户端发送消息：在线人数+1，*/
-        io.sockets.emit('newOne', '新的用户加入了');
+        var onlineNum = 0;
+        console.log(connectionList);
+        io.sockets.emit('newOne', onlineNum);
 
         //用户离开聊天室事件，向其他在线用户广播其离开，在线人数-1
         socket.on('disconnect', function () {
