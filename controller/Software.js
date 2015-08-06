@@ -1,5 +1,5 @@
 exports.index=function (req, res, next) {
-    res.render('chat/index', {
+    res.render('software/index', {
         session: req.session
     });
 };

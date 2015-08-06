@@ -21,7 +21,7 @@ router.get('/logout', index.logout);
 router.get('/bbs', bbs.index);
 router.get('/bbs/sendArticle', auth.userAuth, bbs.showSendArticle);
 router.post('/bbs/sendArticle', auth.userAuth, bbs.sendArticle);
-router.get('/bbs/Article',bbs.showOneArticle);
+router.get('/bbs/Article', bbs.showOneArticle);
 
 /*聊天*/
 router.get('/chat', chat.index);
