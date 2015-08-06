@@ -71,3 +71,28 @@ a {
     margin-bottom: 20px;
     border-radius: 5px;
 }
+
+.speak {
+    border-radius: 5px;
+    max-width: 600px;
+    padding: 5px;
+    background: #5BC0DE;
+    float: left;
+    clear: both;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.mySpeak {
+    border-radius: 5px;
+    max-width: 600px;
+    padding: 5px;
+    margin-left: 30px;
+    background: #9ff3ae;
+    position: relative;
+    float: right;
+    clear: both;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+

@@ -1,14 +1,50 @@
 <% include ../layout/header %>
 <% include ../nav/topbar %>
-<div class="row">
-    <div class="col-lg-9">
-        <div class="block">
-        </div>
-    </div>
+    <div class="row">
+        <div class="col-lg-9">
+            <div class="block">
+                <h4>群聊</h4>
 
-    <div class="col-lg-3">
-        <div class="block">
+                <div style="height: 350px;overflow: auto" id="publicChat">
+                </div>
+
+                <form action="#" id="publicSay">
+                    <table class="table">
+                        <tr>
+                            <td>
+                                <input class="form-control" id="publicSayContent">
+                            </td>
+                            <td>
+                                <button class="btn btn-default">发送</button>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+            <div class="block" id="">
+                <h4>私聊</h4>
+                <table class="table">
+                    <tr>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="block">
+                <button class="btn btn-info" style="width: 225px">新建聊天室</button>
+            </div>
+            <div class="block">
+                资料
+                <br>XXX
+                <br>XXX
+                <br>XXX
+            </div>
+
+            <div class="block">
+                <h4>在线人数</h4>
+                sdf
+            </div>
         </div>
     </div>
-</div>
 <% include ../layout/footer %>

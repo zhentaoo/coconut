@@ -35,6 +35,10 @@ app.use('/', webRoute);
 app.use('/api', apiRoute);
 
 /*Create HTTP server.*/
-http.createServer(app).listen(app.get('port'), function () {
+var server = http.createServer(app).listen(app.get('port'), function () {
     console.log('listen:' + app.get("port"));
 });
+
+/*Create TCP server*/
+var io = require('socket.io').listen(server);
+require('./TCP/server').runs(io);
