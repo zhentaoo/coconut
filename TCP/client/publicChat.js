@@ -1,5 +1,5 @@
 $(function () {
-    var socket = io.connect('http://10.10.10.123:3088');
+    var socket = io.connect('http://10.10.10.123:3035');
 
     $('#publicSay').submit(function () {
         var content = $('#publicSayContent').val();

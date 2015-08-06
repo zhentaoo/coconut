@@ -1,12 +1,47 @@
 exports.runs = function (io) {
+    console.log('sdf');
+    /**
+     * 发送给当前客户端
+     * socket.emit('message', "this is a test");
+     *
+     * 发送给在game房间里的所有用客户端，除了当前客户端
+     * socket.broadcast.to('game').emit('message', 'nice game');
+     *
+     * 发送给所有客户端，除了当前客户端
+     * socket.broadcast.emit('message', "this is a test");
+     *
+     * 发送给socketid这个客户端消息
+     * io.sockets.socket(socketid).emit('message', 'for your eyes only');
+     *
+     * 发送给所有客户端
+     * io.sockets.emit('message', "this is a test");
+     *
+     * 发送给在game房间里的有所客户端
+     * io.sockets.in('game').emit('message', 'cool game');
+     */
     var connectionList = {};
     /*io.sockets.on函数接受字符串'connection'作为客户端发起连接的事件，当连接成功后，调用带有socket参数的回调函数*/
     io.sockets.on('connection', function (socket) {
+        console.log('sdf');
+
         /*当客户端连接时：保存socketId*/
         var socketId = socket.id;
         connectionList[socketId] = {
             socket: socket
         };
+
+        /*有一个新的连接时：向所有客户端发送消息：在线人数+1，*/
+        io.sockets.emit('newOne', '新的用户加入了');
+
+        //用户离开聊天室事件，向其他在线用户广播其离开，在线人数-1
+        socket.on('disconnect', function () {
+            if (connectionList[socketId].username) {
+                socket.broadcast.emit('broadcast_quit', {
+                    username: connectionList[socketId].username
+                });
+            }
+            delete connectionList[socketId];
+        });
 
         /*接受客户端群聊消息*/
         socket.on('publicSay', function (data) {
@@ -28,16 +63,6 @@ exports.runs = function (io) {
             socket.broadcast.emit('broadcast_join', data);
             console.log(data.username + 'join');
             connectionList[socketId].username = data.username;
-        });
-
-        //用户离开聊天室事件，向其他在线用户广播其离开
-        socket.on('disconnect', function () {
-            if (connectionList[socketId].username) {
-                socket.broadcast.emit('broadcast_quit', {
-                    username: connectionList[socketId].username
-                });
-            }
-            delete connectionList[socketId];
         });
 
         //用户发言事件，向其他在线用户广播其发言内容

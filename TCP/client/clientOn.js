@@ -1,7 +1,9 @@
-var socket = io.connect('http://localhost:3088');
+var socket = io.connect('http://localhost:3035');
 
-socket.on('message', function (msg) {
-    $('#messages').append($('<li>').text(msg));
+socket.on('');
+
+socket.on('newOne', function (msg) {
+    console.log('newOne:' + msg);
 });
 
 //收到加入聊天室广播后，显示消息
