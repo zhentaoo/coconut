@@ -1,6 +1,7 @@
 $(function () {
     var socket = io.connect('http://localhost:3035');
-    //socket.emit('jo');
+
+    socket.emit('join', $("#userName").text());
 
     $('#publicSay').submit(function () {
         var content = $('#publicSayContent').val();

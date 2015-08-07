@@ -23,35 +23,21 @@ exports.runs = function (io) {
     /*io.sockets.on函数接受字符串'connection'作为客户端发起连接的事件，当连接成功后，调用带有socket参数的回调函数*/
     io.sockets.on('connection', function (socket) {
         /*有一个新的连接时：向所有客户端发送消息：在线人数+1，*/
-        var onlineNum = 0;
-        connectionList[socket.id]=socket;
-        for (var k in connectionList) {
-            onlineNum++;
-        }
-        console.log('onlineNum:' + onlineNum);
-        io.sockets.emit('newOne', onlineNum);
-
-        /*进入公共聊天室*/
-        socket.on('publicSay', function (data) {
-            /*发送给当前客户端*/
-            socket.emit('publicMySay', data);
-
-            /*发送给除了当前客户的的所有端口*/
-            socket.broadcast.emit('publicOtherSay', data);
+        socket.on('join', function (data) {
+            socket.name = data;
+            var onlineNum = 0;
+            connectionList[socket.id] = socket;
+            for (var k in connectionList) {
+                onlineNum++;
+            }
+            console.log('onlineNum:' + onlineNum);
+            io.sockets.emit('newOne', onlineNum);
         });
 
-        /*todo:进入私人聊天室*/
-        socket.on('join private room', function (data) {
-            console.log(data);
-            socket.join(data);
-            io.sockets.in(data).emit('privateSay', 'new one come in our room');
-        });
 
-        //用户离开聊天室事件，向其他在线用户广播其离开，在线人数-1
+        /*有客户端断开连接，通知所有客户端,在线人数减一*/
         socket.on('disconnect', function () {
             console.log('disconnect');
-
-            /*有客户端断开连接，通知所有客户端*/
             var socketId = socket.id;
             delete connectionList[socketId];
 
@@ -61,6 +47,31 @@ exports.runs = function (io) {
             }
             console.log('onlineNum:' + onlineNum);
             io.sockets.emit('newOne', onlineNum);
+        });
+
+
+        /*进入公共聊天室*/
+        socket.on('publicSay', function (data) {
+            /*发送给当前客户端*/
+            var myData = {
+                name: socket.name,
+                data: data
+            };
+            socket.emit('publicMySay', myData);
+
+            /*发送给除了当前客户的的所有端口*/
+            var otherData = {
+                name: socket.name,
+                data: data
+            };
+            socket.broadcast.emit('publicOtherSay', otherData);
+        });
+
+        /*todo:进入私人聊天室*/
+        socket.on('join private room', function (data) {
+            console.log(data);
+            socket.join(data);
+            io.sockets.in(data).emit('privateSay', 'new one come in our room');
         });
     });
 };

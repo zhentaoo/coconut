@@ -5,8 +5,8 @@ img {
 }
 
 h4 {
-    color: #3550ad;
-    font-size: 20px;
+    color: #5075ff;
+    font-size: 18px;
 }
 
 .myBorder {
@@ -72,26 +72,54 @@ a {
     border-radius: 5px;
 }
 
+.floatLeft {
+    float: left;
+    clear: both;
+}
+
+.floatRight {
+    clear: both;
+    float: right;
+}
+
 .speak {
     border-radius: 5px;
     max-width: 600px;
     padding: 5px;
-    background: #5BC0DE;
     float: left;
-    clear: both;
+    background: #5BC0DE;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.speakName {
+    float: left;
+    border-radius: 5px;
+    max-width: 600px;
+    padding: 5px;
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
 .mySpeak {
+    float: left;
     border-radius: 5px;
     max-width: 600px;
     padding: 5px;
-    margin-left: 30px;
+    margin-left: 2px;
     background: #9ff3ae;
     position: relative;
-    float: right;
-    clear: both;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.mySpeakName {
+    float: left;
+    border-radius: 5px;
+    max-width: 600px;
+    padding: 5px;
+    margin-left: 2px;
+    position: relative;
     margin-top: 10px;
     margin-bottom: 10px;
 }

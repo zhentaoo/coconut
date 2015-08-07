@@ -1,31 +1,32 @@
 $(function () {
     var socket = io.connect('http://localhost:3035');
 
-    socket.on('');
-
+    /*更新在线人数*/
     socket.on('newOne', function (msg) {
         console.log('newOne:' + msg);
         document.getElementById('onlineNum').innerHTML = msg;
     });
 
-    socket.on('publicMySay', function (data) {
-        $('#publicChat').append('<div class="mySpeak">' + data + '</div>');
+    /*公共聊天室*/
+    socket.on('publicMySay', function (datas) {
+        $('#publicChat').append('<div class="floatRight"><div class="mySpeak">' + datas.data + '</div>' + '<div class="mySpeakName">:' + datas.name + '</div></div>');
 
         $('#publicSayContent').val('');
         var div = document.getElementById('publicChat');
         div.scrollTop = div.scrollHeight;
 
-        console.log(data);
+        console.log(datas);
     });
 
-    socket.on('publicOtherSay', function (data) {
-        $('#publicChat').append('<div class="speak">' + data + '</div>');
+    socket.on('publicOtherSay', function (datas) {
+        $('#publicChat').append('<div class="floatLeft"><div class="speakName">' + datas.name + ':</div>' + '<div class="speak">' + datas.data + '</div></div>');
         $('#publicSayContent').val('');
         var div = document.getElementById('publicChat');
         div.scrollTop = div.scrollHeight;
-        console.log(data);
+        console.log(datas);
     });
 
+    /*私人聊天室*/
     socket.on('privateSay', function (data) {
         console.log(data);
     });
