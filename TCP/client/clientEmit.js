@@ -1,13 +1,16 @@
-var socket = io.connect('http://localhost:3035');
 $(function () {
-    /*通知服务端，有客户端接入*/
-    socket.emit('join', {
-        username: 'client'
+    var socket = io.connect('http://localhost:3035');
+    //socket.emit('jo');
+
+    $('#publicSay').submit(function () {
+        var content = $('#publicSayContent').val();
+        socket.emit('publicSay', content);
+        return false;
     });
 
-    /*创建新房间*/
-    $("#createRoom").submit(function () {
-        socket.emit();
+    $("#private1").click(function () {
+        socket.emit('join private room', $("#private1").text());
+        console.log(socket);
     });
 });
 

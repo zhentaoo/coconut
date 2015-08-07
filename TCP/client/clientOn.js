@@ -1,23 +1,32 @@
-var socket = io.connect('http://localhost:3035');
+$(function () {
+    var socket = io.connect('http://localhost:3035');
 
-socket.on('');
+    socket.on('');
 
-socket.on('newOne', function (msg) {
-    console.log('newOne:' + msg);
-    document.getElementById('onlineNum').innerHTML = msg;
-});
+    socket.on('newOne', function (msg) {
+        console.log('newOne:' + msg);
+        document.getElementById('onlineNum').innerHTML = msg;
+    });
 
-//收到加入聊天室广播后，显示消息
-socket.on('broadcast_join', function (data) {
-    console.log(data.username + '加入了聊天室');
-});
+    socket.on('publicMySay', function (data) {
+        $('#publicChat').append('<div class="mySpeak">' + data + '</div>');
 
-//收到离开聊天室广播后，显示消息
-socket.on('broadcast_quit', function (data) {
-    console.log(data.username + '离开了聊天室');
-});
+        $('#publicSayContent').val('');
+        var div = document.getElementById('publicChat');
+        div.scrollTop = div.scrollHeight;
 
-//收到别人发送的消息后，显示消息
-socket.on('broadcast_say', function (data) {
-    console.log(data.username + '说: ' + data.text);
+        console.log(data);
+    });
+
+    socket.on('publicOtherSay', function (data) {
+        $('#publicChat').append('<div class="speak">' + data + '</div>');
+        $('#publicSayContent').val('');
+        var div = document.getElementById('publicChat');
+        div.scrollTop = div.scrollHeight;
+        console.log(data);
+    });
+
+    socket.on('privateSay', function (data) {
+        console.log(data);
+    });
 });

@@ -41,4 +41,4 @@ var server = http.createServer(app).listen(app.get('port'), function () {
 
 /*Create TCP server*/
 var io = require('socket.io').listen(server);
-require('./TCP/server').runs(io);
+require('./tcp/server').runs(io);
