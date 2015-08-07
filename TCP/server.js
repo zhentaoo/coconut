@@ -73,7 +73,7 @@ exports.runs = function (io) {
             console.log("server join private room:" + data);
 
             socket.join(data);
-            io.sockets.in(data).emit('privateJoin', 'new one come in our room');
+            io.sockets.in(data).emit('privateJoin', 'new one come in our private room');
         });
     });
 };

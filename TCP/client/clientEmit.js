@@ -11,8 +11,18 @@ $(function () {
     });
 
     /*ÀΩ»À¡ƒÃÏ “*/
-    $(".roomList").click(function () {
-        socket.emit('join private room', $(this).text());
-        console.log(socket);
-    });
+    if (window.location.pathname == '/chat/privateChat') {
+        console.log('privateChat');
+        var id = GetQueryString("id");
+        console.log(id);
+        socket.emit('join private room', id);
+    }
 });
+
+
+function GetQueryString(name) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+    var r = window.location.search.substr(1).match(reg);
+    if (r != null)return unescape(r[2]);
+    return null;
+}

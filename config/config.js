@@ -18,4 +18,8 @@ config.session = {
     dbname: 'session'
 };
 
+config.server = {
+    port: 3035
+};
+
 module.exports = config;

@@ -29,4 +29,8 @@ $(function () {
     socket.on('privateJoin', function (data) {
         console.log(data);
     });
+
+    socket.on('privateSay', function (data) {
+        console.log(data);
+    });
 });
