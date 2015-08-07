@@ -1,23 +1,24 @@
+/**
+ * 发送给当前客户端
+ * socket.emit('message', "this is a test");
+ *
+ * 发送给在game房间里的所有用客户端，除了当前客户端
+ * socket.broadcast.to('game').emit('message', 'nice game');
+ *
+ * 发送给所有客户端，除了当前客户端
+ * socket.broadcast.emit('message', "this is a test");
+ *
+ * 发送给socketid这个客户端消息
+ * io.sockets.socket(socketid).emit('message', 'for your eyes only');
+ *
+ * 发送给所有客户端
+ * io.sockets.emit('message', "this is a test");
+ *
+ * 发送给在game房间里的有所客户端
+ * io.sockets.in('game').emit('message', 'cool game');
+ */
+
 exports.runs = function (io) {
-    /**
-     * 发送给当前客户端
-     * socket.emit('message', "this is a test");
-     *
-     * 发送给在game房间里的所有用客户端，除了当前客户端
-     * socket.broadcast.to('game').emit('message', 'nice game');
-     *
-     * 发送给所有客户端，除了当前客户端
-     * socket.broadcast.emit('message', "this is a test");
-     *
-     * 发送给socketid这个客户端消息
-     * io.sockets.socket(socketid).emit('message', 'for your eyes only');
-     *
-     * 发送给所有客户端
-     * io.sockets.emit('message', "this is a test");
-     *
-     * 发送给在game房间里的有所客户端
-     * io.sockets.in('game').emit('message', 'cool game');
-     */
     var connectionList = {};
     /*io.sockets.on函数接受字符串'connection'作为客户端发起连接的事件，当连接成功后，调用带有socket参数的回调函数*/
     io.sockets.on('connection', function (socket) {

@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 
 var chatRoomSchema = new mongoose.Schema({
-    title: String,
+    roomName: String,
     author: String,
     password: String
 });
