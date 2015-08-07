@@ -4,6 +4,7 @@ socket.on('');
 
 socket.on('newOne', function (msg) {
     console.log('newOne:' + msg);
+    document.getElementById('onlineNum').innerHTML = msg;
 });
 
 //收到加入聊天室广播后，显示消息

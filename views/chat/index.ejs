@@ -3,50 +3,34 @@
 <div class="row">
     <div class="col-lg-9">
         <div class="block">
-            <h4>群聊</h4>
-
-            <div style="height: 350px;overflow: auto" id="publicChat">
-            </div>
-
-            <form action="#" id="publicSay">
-
-                <table class="table">
-                    <tr>
-                        <td>
-                            <% if(session.isAuth){ %>
-                            <input class="form-control" id="publicSayContent">
-                            <% }else{ %>
-                            <input class="form-control" id="publicSayContent" disabled="disabled">
-                            <% } %>
-                        </td>
-                        <td>
-                            <% if(session.isAuth){ %>
-                            <button class="btn btn-default">发送</button>
-                            <% }else{ %>
-                            <button class="btn btn-default" disabled="disabled">发送</button>
-                            <% } %>
-                        </td>
-                    </tr>
-                </table>
-
-
-            </form>
+            <% include plugins/publicChat.ejs %>
         </div>
         <div class="block" id="">
-            <h4>私聊</h4>
-            <table class="table">
-                <tr>
-                    <td></td>
-                </tr>
-            </table>
+            <% include plugins/privateChat.ejs %>
         </div>
     </div>
     <div class="col-lg-3">
         <% if(session.isAuth){ %>
         <div class="block">
-            <a href="/chat/creatRoom">
-                <button class="btn btn-info" style="width: 225px">新建聊天室</button>
-            </a>
+            <button type="button" class="btn btn-info bigBtn" data-toggle="modal" data-target=".bs-example-modal-sm">
+                新建聊天室
+            </button>
+
+            <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content" style="padding: 20px">
+                        <form id="createRoom">
+                            房间名:
+                            <input class="form-control">
+                            <br>
+                            密码：
+                            <input class="form-control">
+                            <br>
+                            <button class="btn btn-info">创建</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
         <% } %>
         <div class="block">
@@ -59,7 +43,8 @@
 
         <div class="block">
             <h4>在线人数</h4>
-            0
+
+            <h3 id="onlineNum">0</h3>
         </div>
     </div>
 </div>
