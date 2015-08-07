@@ -20,3 +20,12 @@ exports.createRoom = function (req, res, next) {
     });
     res.redirect('/chat');
 };
+
+exports.privateChat = function (req, res, next) {
+    var id = req.query.id;
+
+    res.render('chat/privateChat', {
+        session: req.session,
+        roomName: id
+    });
+};

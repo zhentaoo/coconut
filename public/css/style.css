@@ -127,3 +127,13 @@ a {
 .bigBtn {
     width: 225px;
 }
+
+.chatContent {
+    height: 350px;
+    overflow: auto;
+}
+
+.privateChatContent {
+    height: 550px;
+    overflow: auto;
+}

@@ -50,7 +50,7 @@ exports.runs = function (io) {
         });
 
 
-        /*进入公共聊天室*/
+        /*公共聊天室*/
         socket.on('publicSay', function (data) {
             /*发送给当前客户端*/
             var myData = {
@@ -69,9 +69,11 @@ exports.runs = function (io) {
 
         /*todo:进入私人聊天室*/
         socket.on('join private room', function (data) {
-            console.log(data);
+            console.log("server join private room:" + socket.name);
+            console.log("server join private room:" + data);
+
             socket.join(data);
-            io.sockets.in(data).emit('privateSay', 'new one come in our room');
+            io.sockets.in(data).emit('privateJoin', 'new one come in our room');
         });
     });
 };

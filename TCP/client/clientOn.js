@@ -1,7 +1,6 @@
 $(function () {
     var socket = io.connect('http://localhost:3035');
-
-    /*更新在线人数*/
+    /*在线人数*/
     socket.on('newOne', function (msg) {
         console.log('newOne:' + msg);
         document.getElementById('onlineNum').innerHTML = msg;
@@ -27,7 +26,7 @@ $(function () {
     });
 
     /*私人聊天室*/
-    socket.on('privateSay', function (data) {
+    socket.on('privateJoin', function (data) {
         console.log(data);
     });
 });

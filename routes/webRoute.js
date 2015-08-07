@@ -25,7 +25,8 @@ router.get('/bbs/Article', bbs.showOneArticle);
 
 /*聊天*/
 router.get('/chat', chat.index);
-router.post('/chat/createRoom',chat.createRoom);
+router.post('/chat/createRoom', chat.createRoom);
+router.get('/chat/privateChat', auth.userAuth, chat.privateChat);
 
 /*游戏*/
 router.get('/game', game.index);

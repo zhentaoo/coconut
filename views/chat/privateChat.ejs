@@ -1,0 +1,32 @@
+<% include ../layout/header %>
+<% include ../nav/topbar %>
+<div class="row">
+    <div class="col-lg-9">
+        <div class="block privateChatContent">
+            <h4><%= roomName %></h4>
+        </div>
+        <form action="#" id="privateSay">
+            <table class="table">
+                <tr>
+                    <td>
+                        <input class="form-control" id="privateSayContent">
+                    </td>
+                    <td>
+                        <button class="btn btn-default">发送</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <div class="col-lg-3">
+
+        <div class="block">
+            <h4>在线人数</h4>
+
+            <h3 id="onlineNum">0</h3>
+        </div>
+    </div>
+</div>
+<% include ../layout/footer %>
+<script src="/tcp/client/clientOn.js"></script>
+<script src="/tcp/client/clientEmit.js"></script>

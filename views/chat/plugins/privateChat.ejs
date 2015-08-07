@@ -2,7 +2,8 @@
 <table class="table">
     <% for(var k in roomList){ %>
     <tr>
-        <td><a><%= roomList[k]['roomName'] %></a></td>
+        <td><a class="roomList"
+               href="/chat/privateChat?id=<%= roomList[k]['roomName'] %>"><%= roomList[k]['roomName'] %></a></td>
     </tr>
     <% } %>
 </table>
