@@ -1,5 +1,17 @@
-**Coconut**
+# Coconut
 
-网站技术栈：bootstrap+express+mongodb
+## 网站的技术结构
+######bootstrap+express+mongodb
+<br>
 
-个人网站，我只会把我做的，我感兴趣的东西发布上去
+## 网站的几个基础功能：
+
+* 应用demo：ionic的或者cocos的残次品啦...
+
+* 论坛系统：bbs
+
+* 基于socket.io的聊天室：已实现私聊群聊
+
+* 爬虫系统：ing......
+
+md在线编辑器：http://mahua.jser.me/
