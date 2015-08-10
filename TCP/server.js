@@ -73,7 +73,27 @@ exports.runs = function (io) {
             console.log("server join private room:" + data);
 
             socket.join(data);
+            socket.room = data;
             io.sockets.in(data).emit('privateJoin', 'new one come in our private room');
+        });
+
+        socket.on('privateSay', function (data) {
+            console.log(data);
+            console.log(socket.room);
+
+            /*发送给当前客户端*/
+            var privateMySay = {
+                name: socket.name,
+                data: data
+            };
+            socket.emit('privateMySay', privateMySay);
+
+            /*发送给该房间的其他客户端*/
+            var privateOtherSay = {
+                name: socket.name,
+                data: data
+            };
+            socket.broadcast.to(socket.room).emit('privateOtherSay', privateOtherSay);
         });
     });
 };

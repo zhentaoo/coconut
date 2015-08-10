@@ -4,17 +4,26 @@
     <div class="col-lg-9">
         <div class="block">
             <h4>私人聊天室：<%= roomName %></h4>
-            <div class="privateChatContent" id="publicChat">
+
+            <div class="privateChatContent" id="privateChatContent">
             </div>
 
             <form action="#" id="privateSay">
                 <table class="table">
                     <tr>
                         <td>
-                            <input class="form-control" id="privateSayContent">
+                            <% if(session.isAuth){ %>
+                            <input class="form-control" id="mySay">
+                            <% }else{ %>
+                            <input class="form-control" id="mySay" disabled="disabled">
+                            <% } %>
                         </td>
                         <td>
+                            <% if(session.isAuth){ %>
                             <button class="btn btn-default">发送</button>
+                            <% }else{ %>
+                            <button class="btn btn-default" disabled="disabled">发送</button>
+                            <% } %>
                         </td>
                     </tr>
                 </table>

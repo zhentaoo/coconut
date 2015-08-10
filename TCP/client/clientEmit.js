@@ -8,6 +8,7 @@ $(function () {
     $('#publicSay').submit(function () {
         var content = $('#publicSayContent').val();
         socket.emit('publicSay', content);
+        $('#publicSayContent').val('');
         return false;
     });
 
@@ -18,6 +19,13 @@ $(function () {
         console.log(id);
         socket.emit('join private room', id);
     }
+
+    $('#privateSay').submit(function () {
+        var content = $("#mySay").val();
+        socket.emit('privateSay', content);
+        $('#mySay').val(' ');
+        return false;
+    });
 });
 
 
