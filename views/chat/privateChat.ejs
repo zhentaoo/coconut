@@ -2,21 +2,24 @@
 <% include ../nav/topbar %>
 <div class="row">
     <div class="col-lg-9">
-        <div class="block privateChatContent">
-            <h4><%= roomName %></h4>
+        <div class="block">
+            <h4>私人聊天室：<%= roomName %></h4>
+            <div class="privateChatContent" id="publicChat">
+            </div>
+
+            <form action="#" id="privateSay">
+                <table class="table">
+                    <tr>
+                        <td>
+                            <input class="form-control" id="privateSayContent">
+                        </td>
+                        <td>
+                            <button class="btn btn-default">发送</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
         </div>
-        <form action="#" id="privateSay">
-            <table class="table">
-                <tr>
-                    <td>
-                        <input class="form-control" id="privateSayContent">
-                    </td>
-                    <td>
-                        <button class="btn btn-default">发送</button>
-                    </td>
-                </tr>
-            </table>
-        </form>
     </div>
     <div class="col-lg-3">
 

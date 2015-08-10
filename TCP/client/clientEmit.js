@@ -1,5 +1,6 @@
 $(function () {
-    var socket = io.connect('http://localhost:3035');
+    var url = window.location.host;
+    var socket = io.connect(url);
     /*¿Í»§¶ËµÇÂ¼*/
     socket.emit('join', $("#userName").text());
 
