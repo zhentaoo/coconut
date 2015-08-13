@@ -9,24 +9,20 @@
             </div>
 
             <form action="#" id="privateSay">
-                <table class="table">
-                    <tr>
-                        <td>
-                            <% if(session.isAuth){ %>
-                            <input class="form-control" id="mySay">
-                            <% }else{ %>
-                            <input class="form-control" id="mySay" disabled="disabled">
-                            <% } %>
-                        </td>
-                        <td>
-                            <% if(session.isAuth){ %>
-                            <button class="btn btn-default">发送</button>
-                            <% }else{ %>
-                            <button class="btn btn-default" disabled="disabled">发送</button>
-                            <% } %>
-                        </td>
-                    </tr>
-                </table>
+                <div class="input-group">
+                    <% if(session.isAuth){ %>
+                    <input class="form-control" id="mySay">
+                    <% }else{ %>
+                    <input class="form-control" id="mySay" disabled="disabled">
+                    <% } %>
+                    <span class="input-group-btn">
+                        <% if(session.isAuth){ %>
+                        <button class="btn btn-default">发送</button>
+                        <% }else{ %>
+                        <button class="btn btn-default" disabled="disabled">发送</button>
+                        <% } %>
+                    </span>
+                </div>
             </form>
         </div>
     </div>

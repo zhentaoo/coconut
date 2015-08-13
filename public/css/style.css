@@ -136,3 +136,10 @@ a {
     height: 450px;
     overflow: auto;
 }
+
+.newsImg {
+    height: 150px;
+    width: 22%;
+    margin: 5px;
+}
+

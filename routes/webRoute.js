@@ -4,6 +4,8 @@ var bbs = require('../controller/Bbs');
 var chat = require('../controller/Chat');
 var game = require('../controller/Game');
 var software = require('../controller/Software');
+var crawler=require('../controller/Crawler');
+
 var user = require('../controller/User');
 var auth = require('../middlewares/Auth');
 var router = express.Router();
@@ -34,6 +36,9 @@ router.get('/game/fishman', game.fishman);
 
 /*软件*/
 router.get('/software', software.index);
+
+/*新闻*/
+router.get('/crawler',crawler.index);
 
 /*用户*/
 router.get('/user', user.index);

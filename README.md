@@ -2,7 +2,6 @@
 
 ## 网站的技术结构
 ######bootstrap+express+mongodb
-<br>
 
 ## 网站的几个基础功能：
 
@@ -14,4 +13,5 @@
 
 * 爬虫系统：ing......
 
+<br>
 md在线编辑器：http://mahua.jser.me/
