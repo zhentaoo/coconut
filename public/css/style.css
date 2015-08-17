@@ -60,13 +60,12 @@ h4 {
     font-size: 20px;
 }
 
-a {
-    color: black;
+.topBarFont{
+    font-size: 16px;
 }
 
-.topBarFont {
-    color: #0c8dff;
-    font-size: 14px;
+a {
+    color: black;
 }
 
 .block {
