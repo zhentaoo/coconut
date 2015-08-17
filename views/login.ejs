@@ -8,13 +8,15 @@
 <br><br>
 <div class="row">
     <div class="col-lg-4 col-lg-offset-2 col-xs-12">
-        <form action="/login" method="post">
-            邮箱:<input name="email" class="form-control" type="email" required="required">
-            <br><br>
-            密码:<input name="password" type="password" class="form-control" required="required">
-            <br><br>
-            <button type="submit" class="btn btn-success">登录</button>
-        </form>
+        <div class="block">
+            <form action="/login" method="post">
+                邮箱:<input name="email" class="form-control" type="email" required="required">
+                <br><br>
+                密码:<input name="password" type="password" class="form-control" required="required">
+                <br><br>
+                <button type="submit" class="btn btn-success">登录</button>
+            </form>
+        </div>
         <%- message %>
     </div>
 </div>

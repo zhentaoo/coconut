@@ -3,8 +3,12 @@ img {
     border-radius: 5px;
 }
 
+body {
+    background-color: #E1E1E1;
+}
+
 h4 {
-    color: #5075ff;
+    color: #4cae4c;
     font-size: 18px;
 }
 
@@ -48,21 +52,21 @@ h4 {
 }
 
 .font-logo {
-    color: #1b9aff;
-    font-size: 27px;
+    color: greenyellow;
+    font-size: 20px;
 }
 
 a {
-    color: #1b9aff;
+    color: black;
 }
 
 .topBarFont {
-    color: #1b9aff;
-    font-size: 17px;
+    color: #0c8dff;
+    font-size: 14px;
 }
 
 .block {
-    background-color: #e5ffef;
+    background-color: #F5F5F5;
     padding: 20px;
     display: block;
     margin-left: auto;
@@ -106,7 +110,7 @@ a {
     max-width: 600px;
     padding: 5px;
     margin-left: 2px;
-    background: #9ff3ae;
+    background: #caf3a1;
     position: relative;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -144,7 +148,7 @@ a {
 }
 
 .introduce {
-    color: #5075ff;
+    color: #090a34;
     margin: 20px;
     line-height: 25px;
     font-size: 15px;

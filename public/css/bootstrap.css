@@ -4789,7 +4789,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     background-color: transparent;
     background-image: none;
     border: 1px solid transparent;
-    border-radius: 4px;
+    border-radius: 0px;
 }
 
 .navbar-toggle:focus {
@@ -5132,12 +5132,11 @@ fieldset[disabled] .navbar-default .btn-link:focus {
 }
 
 .navbar-inverse {
-    background-color: black;
-    border-color: #080808;
+    background-color: #434343;
 }
 
 .navbar-inverse .navbar-brand {
-    color: #a0a0a0;
+    color: white;
 }
 
 .navbar-inverse .navbar-brand:hover,
@@ -5147,7 +5146,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
 }
 
 .navbar-inverse .navbar-text {
-    color: #a0a0a0;
+    color: #c6c6c6;
 }
 
 .navbar-inverse .navbar-nav > li > a {
