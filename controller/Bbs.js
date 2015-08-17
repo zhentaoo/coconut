@@ -35,9 +35,7 @@ exports.sendArticle = function (req, res, next) {
 };
 
 exports.showOneArticle = function (req, res, next) {
-    console.log(req.query.id);
     article.findById(req.query.id, function (err, docs) {
-        console.log(docs);
         res.render('bbs/article/oneArticle', {
             session: req.session,
             docs: docs

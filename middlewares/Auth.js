@@ -5,7 +5,6 @@ exports.userAuth = function (req, res, next) {
     if (req.session.isAuth == 1) {
         next();
     } else {
-        console.log('no auth');
         res.redirect('/login');
     }
 };

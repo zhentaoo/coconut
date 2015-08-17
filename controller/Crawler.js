@@ -7,7 +7,6 @@ exports.index = function (req, res, next) {
     var target = null;
     if (req.query.searchId) {
         target = req.query.searchId;
-        console.log(target);
     } else {
         target = "http://www.ifeng.com/";
     }
@@ -44,7 +43,6 @@ exports.index = function (req, res, next) {
                 docs.imgUrl[i] = $('img').eq(i).attr('src');
             }
 
-            console.log(docs);
             res.render('crawler/index', {
                 session: req.session,
                 docs: docs

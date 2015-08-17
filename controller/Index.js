@@ -1,5 +1,5 @@
 exports.index = function (req, res, next) {
-    res.redirect('game');
+    res.redirect('bbs');
 };
 
 exports.error = function (req, res, next) {
@@ -21,7 +21,11 @@ exports.login = function (req, res, next) {
         if (err) {
             res.redirect('404');
         } else {
-            console.log(docs);
+            if (!docs) {
+                req.session.message = '<br><br><font color="red">用户未注册</font><br>';
+                res.redirect('/login');
+            }
+
             var time = new Date(parseInt(docs.time)).toLocaleString();
             if (password == docs.password) {
                 req.session.name = docs.name;

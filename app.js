@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 var http = require('http');
 var session = require('express-session');
 var config = require('./config/config.js');
+var domain = require('domain');
 
 /*route*/
 var webRoute = require('./routes/webRoute');
@@ -29,6 +30,14 @@ app.use(session({
     resave: false,
     saveUninitialized: true
 }));
+
+app.use(function (req, res, next) {
+    var reqDomain = domain.create();
+    reqDomain.on('error', function (err) {
+        res.render('error');
+    });
+    reqDomain.run(next);
+});
 
 /*router*/
 app.use('/', webRoute);
