@@ -1,14 +1,13 @@
 <% include ../layout/header %>
 <% include ../nav/topbar %>
 <div class="row">
-    <div class="col-xs-9">
+    <div class="col-xs-12">
         <div class="block">
             <%
             var length = game.length;
             for(var i = 0 ;i < length;i++){
             %>
             <div class="row">
-
                 <div class="col-xs-6">
                     <a href=<%= hrefUrl[i] %>><img src="<%= imgUrl[i] %>" style="width: 85%;"></a>
                 </div>
@@ -21,21 +20,6 @@
             <hr>
             <br>
             <% } %>
-        </div>
-    </div>
-    <div class="col-xs-3">
-        <div class="block">
-            <h4>网站介绍:</h4>
-            使用bootstrap+express+mongo制作的网站，
-            博主感兴趣的一些玩具会发布到这里
-        </div>
-        <div class="block">
-            <h4> H5技术交流群：</h4>
-            417196663
-        </div>
-        <div class="block">
-            <h4> 博主微信：</h4>
-            <img src="/public/img/weixin.png">
         </div>
     </div>
 </div>

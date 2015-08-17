@@ -4,10 +4,12 @@ var bbs = require('../controller/Bbs');
 var chat = require('../controller/Chat');
 var game = require('../controller/Game');
 var software = require('../controller/Software');
-var crawler=require('../controller/Crawler');
+var crawler = require('../controller/Crawler');
 
 var user = require('../controller/User');
 var auth = require('../middlewares/Auth');
+var introduce = require('../controller/Introduce');
+
 var router = express.Router();
 
 /*主页index*/
@@ -38,7 +40,10 @@ router.get('/game/fishman', game.fishman);
 router.get('/software', software.index);
 
 /*新闻*/
-router.get('/crawler',crawler.index);
+router.get('/crawler', crawler.index);
+
+/*网站介绍*/
+router.get('/introduce', introduce.index);
 
 /*用户*/
 router.get('/user', user.index);

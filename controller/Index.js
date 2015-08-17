@@ -23,7 +23,7 @@ exports.login = function (req, res, next) {
         } else {
             if (!docs) {
                 req.session.message = '<br><br><font color="red">用户未注册</font><br>';
-                res.redirect('/login');
+                res.redirect('/register');
             }
 
             var time = new Date(parseInt(docs.time)).toLocaleString();
@@ -72,5 +72,5 @@ exports.regist = function (req, res, next) {
 
 exports.logout = function (req, res, next) {
     req.session.destroy();
-    res.redirect('/game');
+    res.redirect('/bbs');
 };
