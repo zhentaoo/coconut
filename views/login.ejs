@@ -5,19 +5,45 @@
     <div class="col-lg-8 col-lg-offset-2 col-xs-12">
     </div>
 </div>
-<br><br>
 <div class="row">
-    <div class="col-lg-4 col-lg-offset-2 col-xs-12">
+    <div class="col-lg-9 ">
         <div class="block">
-            <form action="/login" method="post">
-                邮箱:<input name="email" class="form-control" type="email" required="required">
-                <br><br>
-                密码:<input name="password" type="password" class="form-control" required="required">
-                <br><br>
-                <button type="submit" class="btn btn-success">登录</button>
-            </form>
+            <div class="row">
+                <div class="col-lg-5 col-lg-offset-1">
+                    <br>
+                    <br>
+
+                    <form action="/login" method="post">
+                        邮箱:<input name="email" class="form-control" type="email" required="required">
+                        <br><br>
+                        密码:<input name="password" type="password" class="form-control" required="required">
+                        <br><br>
+                        <button type="submit" class="btn btn-success">登录</button>
+                    </form>
+                    <br>
+                    <br>
+                    <br>
+                </div>
+            </div>
         </div>
         <%- message %>
     </div>
+
+    <div class="col-lg-3">
+        <div class="block">
+            <h4>网站介绍:</h4>
+            使用bootstrap+express+mongo制作的网站，
+            博主感兴趣的一些玩具会发布到这里
+        </div>
+        <div class="block">
+            <h4> H5技术交流群：</h4>
+            417196663
+        </div>
+        <div class="block">
+            <h4> 博主微信：</h4>
+            <img src="/public/img/weixin.png">
+        </div>
+    </div>
+
 </div>
 <% include layout/footer %>

@@ -1,22 +1,48 @@
 <% include layout/header %>
 <% include nav/topbar %>
-<br>
-<br>
 <div class="row">
-    <div class="col-lg-4 col-lg-offset-2 col-xs-12">
-        <form action="/register" method="post">
-            email:<input name="email" class="form-control" type="email" required="required">
-            <br>
-            name:<input name="name" class="form-control" required="required">
-            <br>
-            psw:<input name="password" class="form-control" type="password" required="required">
-            <br>
-            <button type="submit" class="btn btn-default btn-success">注册</button>
-            &nbsp;
-            &nbsp;
-            &nbsp;
-            <%- session.message %>
-        </form>
-        <% include layout/footer %>
+    <div class="col-lg-9">
+        <div class="block">
+            <div class="row">
+                <div class="col-lg-5 col-lg-offset-1">
+                    <br>
+                    <br>
+
+                    <form action="/register" method="post">
+                        email:<input name="email" class="form-control" type="email" required="required">
+                        <br>
+                        name:<input name="name" class="form-control" required="required">
+                        <br>
+                        psw:<input name="password" class="form-control" type="password" required="required">
+                        <br>
+                        <button type="submit" class="btn btn-default btn-success">注册</button>
+                        &nbsp;
+                        &nbsp;
+                        &nbsp;
+                        <%- session.message %>
+                    </form>
+                    <br>
+                    <br>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <div class="block">
+            <h4>网站介绍:</h4>
+            使用bootstrap+express+mongo制作的网站，
+            博主感兴趣的一些玩具会发布到这里
+        </div>
+        <div class="block">
+            <h4> H5技术交流群：</h4>
+            417196663
+        </div>
+        <div class="block">
+            <h4> 博主微信：</h4>
+            <img src="/public/img/weixin.png">
+        </div>
     </div>
 </div>
+<% include layout/footer %>
+
