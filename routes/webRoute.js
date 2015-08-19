@@ -9,6 +9,8 @@ var crawler = require('../controller/Crawler');
 var user = require('../controller/User');
 var auth = require('../middlewares/Auth');
 var introduce = require('../controller/Introduce');
+var tools=require('../controller/Tools');
+;
 
 var router = express.Router();
 
@@ -47,5 +49,8 @@ router.get('/introduce', introduce.index);
 
 /*用户*/
 router.get('/user', user.index);
+
+/*工具集合*/
+router.get('/tools',tools.index);
 
 module.exports = router;
