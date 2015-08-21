@@ -44,8 +44,6 @@ app.use('/', webRoute);
 app.use('/api', apiRoute);
 
 /*Create HTTP server.*/
-
-
 var server = http.createServer(app).listen(config.server.port, function () {
     console.log('listen:' + config.server.port);
 });

@@ -1751,15 +1751,15 @@ pre code {
     margin-left: auto;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 950px) {
     .container {
-        width: 750px;
+        width: 950px;
     }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1100px) {
     .container {
-        width: 970px;
+        width: 1100px;
     }
 }
 
@@ -3547,8 +3547,8 @@ fieldset[disabled] .btn-primary.active {
 
 .btn-success {
     color: #fff;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
+    background-color: #57B382;
+    border-color: #57B382;
 }
 
 .btn-success:hover,
@@ -3557,8 +3557,8 @@ fieldset[disabled] .btn-primary.active {
 .btn-success.active,
 .open > .dropdown-toggle.btn-success {
     color: #fff;
-    background-color: #449d44;
-    border-color: #398439;
+    background-color: #4ba575;
+    border-color: #4ba575;
 }
 
 .btn-success:active,
@@ -5132,7 +5132,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
 }
 
 .navbar-inverse {
-    background-color: #434343;
+    background-color: #353644;
 }
 
 .navbar-inverse .navbar-brand {

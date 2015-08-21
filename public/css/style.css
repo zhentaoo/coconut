@@ -8,12 +8,12 @@ body {
 }
 
 h4 {
-    color: #4cae4c;
+    color: #4ba575;
     font-size: 18px;
 }
 
 .title {
-    color: #4cae4c;
+    color: #4ba575;
 }
 
 .myBorder {
@@ -56,16 +56,12 @@ h4 {
 }
 
 .font-logo {
-    color: greenyellow;
+    color: #4ba575;
     font-size: 20px;
 }
 
 .topBarFont {
     font-size: 15px;
-}
-
-a {
-    color: black;
 }
 
 .block {
@@ -157,16 +153,29 @@ a {
     font-size: 15px;
 }
 
-.introduce a {
-    color: #4cae4c;
+a {
+    color: black;
 }
 
-.tools{
+.introduce a {
+    color: #5BC0DE;
+}
+
+.introduce a:hover {
+    color: #4ba575;
+}
+
+.tools {
     color: #090a34;
     margin: 20px;
     line-height: 25px;
     font-size: 15px;
 }
 
-.tools a{
+.tools a {
+}
+
+::selection {
+    color: white;
+    background: #57b382;
 }

@@ -19,7 +19,7 @@ config.session = {
 };
 
 config.server = {
-    port: 3303
+    port: 3333
 };
 
 module.exports = config;
