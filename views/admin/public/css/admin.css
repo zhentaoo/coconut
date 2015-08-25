@@ -1,5 +1,5 @@
 .content {
-    padding: 20px 20px 150px 50px;/*上，右,下，左*/
+    padding: 20px 20px 150px 50px; /*上，右,下，左*/
     left: 180px;
     top: 45px;
     color: #4ba575;
@@ -33,7 +33,21 @@
     position: fixed;
     height: 45px;
     background-color: #353644;
-    padding: 3px;
+    padding: 5px;
+}
+
+.adminTopbarLeft {
+    color: whitesmoke;
+    font-size: 22px;
+    float: left;
+}
+
+.adminTopbarRight {
+    padding-top: 5px;
+    padding-right: 30px;
+    color: white;
+    font-size: 16px;
+    float: right;
 }
 
 h4 {
