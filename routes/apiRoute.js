@@ -4,14 +4,14 @@
 var express = require('express');
 var index = require('../controller/Index');
 var crawler = require('../controller/api/Crawler');
-var bbs = require('../controller/api/Bbs');
+var sns = require('../controller/api/Sns');
 
 var router = express.Router();
 
 /*新闻*/
 router.get('/crawler', crawler.index);
-/*bbs*/
-router.get('/bbs', bbs.index);
-router.get('/bbs/Article', bbs.showOneArticle);
+/*sns*/
+router.get('/sns', sns.index);
+router.get('/sns/Article', sns.showOneArticle);
 
 module.exports = router;

@@ -1,4 +1,4 @@
-var article = require('../model/index').Article;
+var article = require('../../model/index').Article;
 
 exports.index = function (req, res, next) {
     var page = req.query.page - 1;
@@ -8,9 +8,9 @@ exports.index = function (req, res, next) {
 
         article.find({}, function (err, docs) {
             if (err) {
-                res.redirect('/error');
+                res.send('error');
             }
-            res.render('sns/index', {
+            res.send({
                 session: req.session,
                 docs: docs
             });
@@ -18,25 +18,9 @@ exports.index = function (req, res, next) {
     });
 };
 
-exports.showSendArticle = function (req, res, next) {
-    res.render('sns/article/index', {
-        session: req.session
-    });
-};
-
-exports.sendArticle = function (req, res, next) {
-    article.create({
-        title: req.body.title,
-        content: req.body.content,
-        author: req.session.name
-    }, function () {
-        res.redirect('/sns');
-    });
-};
-
 exports.showOneArticle = function (req, res, next) {
     article.findById(req.query.id, function (err, docs) {
-        res.render('sns/article/oneArticle', {
+        res.send({
             session: req.session,
             docs: docs
         });

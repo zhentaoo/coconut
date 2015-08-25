@@ -7,7 +7,7 @@
 
 * 应用demo：ionic的或者cocos的残次品啦...
 
-* 论坛系统：bbs
+* 问答社区：sns
 
 * 基于socket.io的聊天室：已实现私聊群聊
 

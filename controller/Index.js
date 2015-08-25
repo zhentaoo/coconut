@@ -1,5 +1,5 @@
 exports.index = function (req, res, next) {
-    res.redirect('bbs');
+    res.redirect('sns');
 };
 
 exports.error = function (req, res, next) {
@@ -34,7 +34,7 @@ exports.login = function (req, res, next) {
                 req.session.time = time;
                 req.session.id = docs._id;
                 req.session.follower = docs.follower;
-                res.redirect('/bbs');
+                res.redirect('/sns');
             } else {
                 req.session.message = '<br><br><font color="red">用户名或密码错误,请重新登录</font><br>';
                 res.redirect('/login');
@@ -72,5 +72,5 @@ exports.regist = function (req, res, next) {
 
 exports.logout = function (req, res, next) {
     req.session.destroy();
-    res.redirect('/bbs');
+    res.redirect('/sns');
 };

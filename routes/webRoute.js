@@ -1,6 +1,6 @@
 var express = require('express');
 var index = require('../controller/Index');
-var bbs = require('../controller/Bbs');
+var sns = require('../controller/Sns');
 var chat = require('../controller/Chat');
 var game = require('../controller/Game');
 var software = require('../controller/Software');
@@ -22,11 +22,11 @@ router.get('/register', index.showRegist);
 router.post('/register', index.regist);
 router.get('/logout', index.logout);
 
-/*论坛*/
-router.get('/bbs', bbs.index);
-router.get('/bbs/sendArticle', auth.userAuth, bbs.showSendArticle);
-router.post('/bbs/sendArticle', auth.userAuth, bbs.sendArticle);
-router.get('/bbs/Article', bbs.showOneArticle);
+/*问答*/
+router.get('/sns', sns.index);
+router.get('/sns/sendArticle', auth.userAuth, sns.showSendArticle);
+router.post('/sns/sendArticle', auth.userAuth, sns.sendArticle);
+router.get('/sns/Article', sns.showOneArticle);
 
 /*聊天*/
 router.get('/chat', chat.index);
