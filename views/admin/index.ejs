@@ -1,5 +1,4 @@
-<% include ../layout/header %>
-<% include ../nav/topbar %>
+<% include ../layout/adminHeader.ejs %>
 <div class="row">
     <div class="col-lg-3 col-lg-offset-1">
         <h1>ADMIN MANAGER</h1>
@@ -11,7 +10,7 @@
 <br>
 
 <div class="row">
-    <div class="col-lg-3 col-lg-offset-3">
+    <div class="col-lg-3 col-lg-offset-3 ">
         <form action="api/auth.php" method="post">
             name:<input name="name" class="form-control" required="required">
             <br>
@@ -21,4 +20,4 @@
         </form>
     </div>
 </div>
-<% include ../layout/footer %>
+<% include ../layout/adminFooter.ejs %>

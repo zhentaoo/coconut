@@ -10,6 +10,7 @@ var user = require('../controller/User');
 var auth = require('../middlewares/Auth');
 var introduce = require('../controller/Introduce');
 var tools = require('../controller/Tools');
+var admin=require('../controller/admin');
 
 var router = express.Router();
 
@@ -51,5 +52,10 @@ router.get('/user', user.index);
 
 /*工具集合*/
 router.get('/tools', tools.index);
+
+/*网站后台*/
+router.get('/admin',admin.index);
+router.post('/admin/login',admin.login);
+router.get('/admin/manager',admin.manager);
 
 module.exports = router;

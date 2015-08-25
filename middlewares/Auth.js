@@ -14,6 +14,6 @@ exports.adminAuth = function (req, res, next) {
     if (req.session.isAuth == 2) {
         next();
     } else {
-        res.redirect('/login');
+        res.redirect('/amdmin');
     }
 };

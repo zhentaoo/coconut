@@ -1,0 +1,41 @@
+.content {
+    padding: 20px 20px 150px 50px;/*ÉÏ£¬ÓÒ,ÏÂ£¬×ó*/
+    left: 180px;
+    top: 45px;
+    color: #4ba575;
+    position: absolute;
+}
+
+.sideBar {
+    top: 45px;
+    position: fixed;
+    height: 100%;
+    width: 180px;
+    background-color: #3E3D49;
+}
+
+.sideBar a {
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    display: block;
+    background-color: #3E3D49;
+    border-bottom: 1px solid #353644;
+}
+
+.sideBar a:hover {
+    background-color: #414D5C;
+}
+
+.adminTopbar {
+    z-index: 1111111111;
+    width: 100%;
+    position: fixed;
+    height: 45px;
+    background-color: #353644;
+    padding: 3px;
+}
+
+h4 {
+    color: white;
+}
