@@ -46,7 +46,9 @@ mongoose.connect(url, function (err) {
 require('./User');
 require('./Article');
 require('./ChatRoom');
+require('./Program');
 
 exports.User = mongoose.model('User');
 exports.Article = mongoose.model('Article');
 exports.ChatRoom = mongoose.model('ChatRoom');
+exports.Program = mongoose.model('Program');

@@ -3,12 +3,26 @@ var article = require('../model/index').Article;
 exports.index = function (req, res, next) {
     res.render('admin/index');
 };
-exports.manager = function (req, res, next) {
-    res.render('admin/manager');
+exports.program = function (req, res, next) {
+    res.render('admin/content/program');
+};
+
+exports.user = function (req, res, next) {
+    res.render('admin/content/user');
+};
+
+exports.article = function (req, res, next) {
+    res.render('admin/content/article');
 };
 
 exports.login = function (req, res, next) {
-    res.render('admin/manager');
+    console.log(req.body.password);
+    console.log(req.body.name);
+    if (req.body.password == "123456" && req.body.name == 'leo') {
+        res.redirect('/admin/program');
+    } else {
+        res.redirect('/admin');
+    }
     //var password = req.body.password;
     //var email = req.body.email;
     //var user = require('../model/index').User;

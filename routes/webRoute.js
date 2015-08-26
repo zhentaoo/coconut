@@ -56,6 +56,9 @@ router.get('/tools', tools.index);
 /*网站后台*/
 router.get('/admin',admin.index);
 router.post('/admin/login',admin.login);
-router.get('/admin/manager',admin.manager);
+router.get('/admin/article',admin.article);
+router.get('/admin/user',admin.user);
+router.get('/admin/program',admin.program);
+
 
 module.exports = router;
