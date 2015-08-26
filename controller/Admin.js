@@ -4,15 +4,15 @@ exports.index = function (req, res, next) {
     res.render('admin/index');
 };
 exports.program = function (req, res, next) {
-    res.render('admin/content/program');
+    res.render('admin/content/program/index');
 };
 
 exports.user = function (req, res, next) {
-    res.render('admin/content/user');
+    res.render('admin/content/user/index');
 };
 
 exports.article = function (req, res, next) {
-    res.render('admin/content/article');
+    res.render('admin/content/article/index');
 };
 
 exports.login = function (req, res, next) {

@@ -10,7 +10,8 @@ var user = require('../controller/User');
 var auth = require('../middlewares/Auth');
 var introduce = require('../controller/Introduce');
 var tools = require('../controller/Tools');
-var admin=require('../controller/admin');
+var admin = require('../controller/admin');
+var my = require('../controller/my');
 
 var router = express.Router();
 
@@ -54,11 +55,28 @@ router.get('/user', user.index);
 router.get('/tools', tools.index);
 
 /*网站后台*/
-router.get('/admin',admin.index);
-router.post('/admin/login',admin.login);
-router.get('/admin/article',admin.article);
-router.get('/admin/user',admin.user);
-router.get('/admin/program',admin.program);
+router.get('/admin', admin.index);
+router.post('/admin/login', admin.login);
 
+/*个人主页*/
+router.get('/my', my.index);
+
+/*todo:文章修改的新增接口*/
+router.get('/admin/article', auth.adminAuth, admin.article);
+router.get('/admin/article/edit', auth.adminAuth, admin.article);
+router.get('/admin/article/add', auth.adminAuth, admin.article);
+router.get('/admin/article/delete', auth.adminAuth, admin.article);
+
+/*todo:用户管理的新增接口*/
+router.get('/admin/user', auth.adminAuth, admin.user);
+router.get('/admin/user/edit', auth.adminAuth, admin.user);
+router.get('/admin/user/add', auth.adminAuth, admin.user);
+router.get('/admin/user/delete', auth.adminAuth, admin.user);
+
+/*todo:博文修改的新增接口*/
+router.get('/admin/program', auth.adminAuth, admin.program);
+router.get('/admin/program/edit', auth.adminAuth);
+router.get('/admin/program/add', auth.adminAuth);
+router.get('/admin/program/delete', auth.adminAuth);
 
 module.exports = router;
