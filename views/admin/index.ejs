@@ -1,23 +1,23 @@
 <% include layout/adminHeader.ejs %>
-<div class="row">
-    <div class="col-lg-3 col-lg-offset-1">
-        <h1>ADMIN MANAGER</h1>
-    </div>
-</div>
-<br>
-<br>
-<br>
-<br>
+<div class="container"><br>
 
-<div class="row">
-    <div class="col-lg-3 col-lg-offset-3 ">
-        <form action="/admin/login" method="post">
-            name:<input name="name" class="form-control" required="required">
-            <br>
-            password:<input name="password" class="form-control" required="required" type="password">
-            <br>
-            <button class="btn btn-default">login</button>
-        </form>
+    <div class="row">
+        <div class="col-lg-5 col-lg-offset-1">
+            <h1>ADMIN MANAGER</h1>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-lg-3 col-lg-offset-3 ">
+            <form action="/admin/login" method="post">
+                name:<input name="name" class="form-control" required="required">
+                <br>
+                password:<input name="password" class="form-control" required="required" type="password">
+                <br>
+                <button class="btn btn-default">login</button>
+            </form>
+        </div>
     </div>
 </div>
 <% include layout/adminFooter.ejs %>

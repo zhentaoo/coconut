@@ -1,0 +1,19 @@
+<% include ../../layout/adminHeader.ejs %>
+<% include ../../nav/adminSidebar.ejs %>
+<% include ../../nav/adminTopbar.ejs %>
+
+<div class="content">
+    <form action="/sns/sendArticle" method="post">
+        标题：<input name="title" class="form-control" required="required">
+        <br>
+        <div>
+            正文： <textarea name="content" id="editor" required="required"
+                                      style="width: 100%;height: 350px"></textarea>
+            <!--<script id="editor" type="text/plain" style="width:100%"></script>-->
+        </div>
+        <br>
+        <button class="btn btn-success" type="submit">修改</button>
+    </form>
+</div>
+<% include ../../layout/adminFooter.ejs %>
+<script src="/public/js/ueditor.js"></script>

@@ -2,7 +2,7 @@ var user = require('../model').User;
 
 /*普通用户权限*/
 exports.userAuth = function (req, res, next) {
-    if (req.session.isAuth == 1) {
+    if (req.session.isAuth == 1 || req.session.isAuth == 2) {
         next();
     } else {
         res.redirect('/login');
@@ -14,6 +14,6 @@ exports.adminAuth = function (req, res, next) {
     if (req.session.isAuth == 2) {
         next();
     } else {
-        res.redirect('/amdmin');
+        res.redirect('/admin');
     }
 };

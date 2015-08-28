@@ -1,10 +1,34 @@
 var article = require('../model/index').Article;
+var program = require('../model/index').Program;
 
 exports.index = function (req, res, next) {
-    res.render('admin/index');
+    program.find({}, function (err, data) {
+        console.log(data);
+        res.render('admin/index', data);
+    });
 };
+
 exports.program = function (req, res, next) {
     res.render('admin/content/program/index');
+};
+
+
+exports.showProgramEdit = function (req, res, next) {
+    res.render('admin/content/program/edit');
+};
+
+exports.programEdit = function (req, res, next) {
+    var title=req.body.title;
+    var content=req.body.content;
+
+
+
+    res.render('admin/content/program/edit');
+};
+
+
+exports.programAdd = function (req, res, next) {
+    res.render('admin/content/program/add');
 };
 
 exports.user = function (req, res, next) {
@@ -19,35 +43,9 @@ exports.login = function (req, res, next) {
     console.log(req.body.password);
     console.log(req.body.name);
     if (req.body.password == "123456" && req.body.name == 'leo') {
+        req.session.isAuth = 2;
         res.redirect('/admin/program');
     } else {
         res.redirect('/admin');
     }
-    //var password = req.body.password;
-    //var email = req.body.email;
-    //var user = require('../model/index').User;
-    //user.findOne({email: email}, function (err, docs) {
-    //    if (err) {
-    //        res.redirect('404');
-    //    } else {
-    //        if (!docs) {
-    //            req.session.message = '<br><br><font color="red">用户未注册</font><br>';
-    //            res.redirect('/register');
-    //        }
-    //
-    //        var time = new Date(parseInt(docs.time)).toLocaleString();
-    //        if (password == docs.password) {
-    //            req.session.name = docs.name;
-    //            req.session.email = docs.email;
-    //            req.session.isAuth = 1;
-    //            req.session.time = time;
-    //            req.session.id = docs._id;
-    //            req.session.follower = docs.follower;
-    //            res.redirect('/sns');
-    //        } else {
-    //            req.session.message = '<br><br><font color="red">用户名或密码错误,请重新登录</font><br>';
-    //            res.redirect('/login');
-    //        }
-    //    }
-    //});
 };

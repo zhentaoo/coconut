@@ -4,6 +4,7 @@
     top: 45px;
     color: #4ba575;
     position: absolute;
+    width: 80%;
 }
 
 .sideBar {
@@ -51,6 +52,6 @@
     float: right;
 }
 
-h4 {
-    color: white;
+.adminContentTitle {
+    color: blue;
 }

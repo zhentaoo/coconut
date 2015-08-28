@@ -54,12 +54,12 @@ router.get('/user', user.index);
 /*工具集合*/
 router.get('/tools', tools.index);
 
-/*网站后台*/
-router.get('/admin', admin.index);
-router.post('/admin/login', admin.login);
-
 /*个人主页*/
 router.get('/my', my.index);
+
+/*todo:网站后台*/
+router.get('/admin', admin.index);
+router.post('/admin/login', admin.login);
 
 /*todo:文章修改的新增接口*/
 router.get('/admin/article', auth.adminAuth, admin.article);
@@ -75,8 +75,14 @@ router.get('/admin/user/delete', auth.adminAuth, admin.user);
 
 /*todo:博文修改的新增接口*/
 router.get('/admin/program', auth.adminAuth, admin.program);
-router.get('/admin/program/edit', auth.adminAuth);
-router.get('/admin/program/add', auth.adminAuth);
+
+router.get('/admin/program/edit', auth.adminAuth,admin.showProgramEdit);
+router.post('/admin/program/edit', auth.adminAuth,admin.programEdit);
+
+router.get('/admin/program/add', auth.adminAuth,admin.programAdd);
+router.post('/admin/program/add',auth.adminAuth,admin.programAdd);
+
 router.get('/admin/program/delete', auth.adminAuth);
+router.post('/admin/program/delete', auth.adminAuth);
 
 module.exports = router;
