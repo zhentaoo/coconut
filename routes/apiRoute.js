@@ -10,8 +10,13 @@ var router = express.Router();
 
 /*新闻*/
 router.get('/crawler', crawler.index);
+
 /*sns*/
 router.get('/sns', sns.index);
 router.get('/sns/Article', sns.showOneArticle);
+
+
+/*todo: login*/
+/*todo: register*/
 
 module.exports = router;
