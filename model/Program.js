@@ -3,7 +3,6 @@ var mongoose = require('mongoose');
 var programSchema = new mongoose.Schema({
     title: String,
     content: String,
-    tags: [String],
     date: {
         createAt: {
             type: Date,

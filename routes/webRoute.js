@@ -79,7 +79,7 @@ router.get('/admin/program', auth.adminAuth, admin.program);
 router.get('/admin/program/edit', auth.adminAuth,admin.showProgramEdit);
 router.post('/admin/program/edit', auth.adminAuth,admin.programEdit);
 
-router.get('/admin/program/add', auth.adminAuth,admin.programAdd);
+router.get('/admin/program/add', auth.adminAuth,admin.showProgramAdd);
 router.post('/admin/program/add',auth.adminAuth,admin.programAdd);
 
 router.get('/admin/program/delete', auth.adminAuth);

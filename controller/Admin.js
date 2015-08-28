@@ -18,16 +18,22 @@ exports.showProgramEdit = function (req, res, next) {
 };
 
 exports.programEdit = function (req, res, next) {
-    var title=req.body.title;
-    var content=req.body.content;
-
-
-
-    res.render('admin/content/program/edit');
+    res.redirect('/admin/program');
 };
 
 
 exports.programAdd = function (req, res, next) {
+    var title = req.body.title;
+    var content = req.body.content;
+    program.create({
+        title: title,
+        content: content
+    }, function (err, docs) {
+        res.redirect('/admin/program');
+    });
+};
+
+exports.showProgramAdd = function (req, res, next) {
     res.render('admin/content/program/add');
 };
 
