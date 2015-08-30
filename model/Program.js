@@ -1,20 +1,21 @@
 var mongoose = require('mongoose');
 
+var time = Date.parse(new Date());
 var programSchema = new mongoose.Schema({
     title: String,
     content: String,
     date: {
         createAt: {
-            type: Date,
-            default: Date.now()
+            type: String,
+            default: time
         },
         updateAt: {
-            type: Date,
-            default: Date.now()
+            type: String,
+            default: time
         },
         allUpdateAt: {
-            type: Date,
-            default: Date.now()
+            type: String,
+            default: time
         }
     },
     hidden: {

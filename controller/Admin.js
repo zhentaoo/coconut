@@ -55,7 +55,12 @@ exports.programAdd = function (req, res, next) {
 };
 
 exports.programDel = function (req, res, next) {
-
+    var _id = req.query.id;
+    program.remove({
+        "_id": _id
+    }, function (err) {
+        res.redirect('/admin/program');
+    });
 };
 
 /*用户管理：增删改查*/

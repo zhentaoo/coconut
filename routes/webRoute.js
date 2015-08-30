@@ -12,6 +12,7 @@ var introduce = require('../controller/Introduce');
 var tools = require('../controller/Tools');
 var admin = require('../controller/admin');
 var my = require('../controller/my');
+var program=require('../controller/program');
 
 var router = express.Router();
 
@@ -57,6 +58,9 @@ router.get('/tools', tools.index);
 /*个人主页*/
 router.get('/my', my.index);
 
+/*技术杂谈*/
+router.get('/program',program.index);
+
 /*todo:网站后台*/
 router.get('/admin', admin.showLogin);
 router.post('/admin/login', admin.login);
@@ -70,8 +74,7 @@ router.post('/admin/program/add',auth.adminAuth,admin.programAdd);
 router.get('/admin/program/edit', auth.adminAuth,admin.showProgramEdit);
 router.post('/admin/program/edit', auth.adminAuth,admin.programEdit);
 
-router.get('/admin/program/delete', auth.adminAuth);
-router.post('/admin/program/delete', auth.adminAuth);
+router.get('/admin/program/delete', auth.adminAuth,admin.programDel);
 
 /*todo:文章修改的新增接口*/
 router.get('/admin/article', auth.adminAuth, admin.article);

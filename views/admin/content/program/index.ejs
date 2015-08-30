@@ -24,20 +24,24 @@
     <h4>已有程序博文：</h4>
     <table class="table table-hover">
         <thead>
-            <th>博文</th>
-            <th>修改时间</th>
-            <th>操作</th>
+        <th>博文</th>
+        <th>修改时间</th>
+        <th>操作</th>
         </thead>
-        <% for(var i=0;i<docs.length;i++){ %>
+        <% for(var i = 0;i < docs.length;i++){ %>
         <tr>
             <td><%= docs[i].title %></td>
-            <td><%= docs[i].date.updateAt %></td>
-            <td><button class="btn btn-xs btn-info">修改</button> | <button class="btn btn-xs btn-info">删除</button></td>
+            <td><%= new Date(parseInt(docs[i].date.updateAt)).getFullYear()+"-"
+                +parseInt(new Date(parseInt(docs[i].date.updateAt)).getMonth()+1)+"-"
+                +new Date(parseInt(docs[i].date.updateAt)).getDate() %></td>
+            <td>
+                <button class="btn btn-xs btn-info">修改</button>
+                |
+                <button class="btn btn-xs btn-info">删除</button>
+            </td>
         </tr>
         <% } %>
     </table>
-
-
 </div>
 <% include ../../layout/adminFooter.ejs %>
 <!--<script src="/public/js/ueditor.js"></script>-->
