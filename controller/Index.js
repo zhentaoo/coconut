@@ -31,7 +31,7 @@ exports.login = function (req, res, next) {
                 req.session.name = docs.name;
                 req.session.email = docs.email;
                 req.session.isAuth = 1;
-                req.session.time = time;
+                req.session.time = docs.time;
                 req.session.id = docs._id;
                 req.session.follower = docs.follower;
                 res.redirect('/sns');

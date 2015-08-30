@@ -25,16 +25,16 @@
     <table class="table table-hover">
         <thead>
             <th>博文</th>
-            <th>分类</th>
             <th>修改时间</th>
             <th>操作</th>
         </thead>
+        <% for(var i=0;i<docs.length;i++){ %>
         <tr>
-            <td>sdfasdf</td>
-            <td>sdfasdf</td>
-            <td>sdfasdf</td>
+            <td><%= docs[i].title %></td>
+            <td><%= docs[i].date.updateAt %></td>
             <td><button class="btn btn-xs btn-info">修改</button> | <button class="btn btn-xs btn-info">删除</button></td>
         </tr>
+        <% } %>
     </table>
 
 
