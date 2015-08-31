@@ -16,6 +16,12 @@ exports.showLogin = function (req, res, next) {
 exports.login = function (req, res, next) {
     var password = req.body.password;
     var email = req.body.email;
+
+    var crypto = require('crypto');
+    var shasum = crypto.createHash('sha1');
+    shasum.update(password);
+    var pass = shasum.digest('hex');
+
     var user = require('../model/index').User;
     user.findOne({email: email}, function (err, docs) {
         if (err) {
@@ -27,7 +33,7 @@ exports.login = function (req, res, next) {
             }
 
             var time = new Date(parseInt(docs.time)).toLocaleString();
-            if (password == docs.password) {
+            if (pass == docs.password) {
                 req.session.name = docs.name;
                 req.session.email = docs.email;
                 req.session.isAuth = 1;
@@ -60,12 +66,16 @@ exports.regist = function (req, res, next) {
     var crypto = require('crypto');
     var shasum = crypto.createHash('sha1');
     shasum.update(password);
-    var d = shasum.digest('hex');
+    var pass = shasum.digest('hex');
+
+    user.find({'email':email}, function (err, docs) {
+
+    });
 
     user.create({
         name: name,
         email: email,
-        password: password
+        password: pass
     }, function (err, docs) {
         req.session.message = '<br><br><font color="green">注册成功,请登录</font><br>';
 
