@@ -29,7 +29,7 @@ exports.login = function (req, res, next) {
         } else {
             if (!docs) {
                 req.session.message = '<br><br><font color="red">用户未注册</font><br>';
-                res.redirect('/register');
+                res.redirect('/login');
             }
 
             var time = new Date(parseInt(docs.time)).toLocaleString();
@@ -68,22 +68,30 @@ exports.regist = function (req, res, next) {
     shasum.update(password);
     var pass = shasum.digest('hex');
 
-    user.find({'email':email}, function (err, docs) {
+    user.find({'email': email}, function (err, docs) {
+        if(docs.length==0){
 
+            user.create({
+                name: name,
+                email: email,
+                password: pass
+            }, function (err, docs) {
+                req.session.message = '<br><br><font color="green">注册成功,请登录</font><br>';
+                res.redirect('/login');
+                //res.render('register', {
+                //    tittle: '注册',
+                //    session: req.session
+                //});
+            });
+        }else{
+            req.session.message = '<br><br><font color="red">该邮箱已注册过，请重试</font><br>';
+            res.render('register', {
+                tittle: '注册',
+                session: req.session
+            });
+        }
     });
 
-    user.create({
-        name: name,
-        email: email,
-        password: pass
-    }, function (err, docs) {
-        req.session.message = '<br><br><font color="green">注册成功,请登录</font><br>';
-
-        res.render('register', {
-            tittle: '注册',
-            session: req.session
-        });
-    });
 };
 
 exports.logout = function (req, res, next) {
