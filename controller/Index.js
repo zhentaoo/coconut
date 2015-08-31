@@ -56,6 +56,12 @@ exports.regist = function (req, res, next) {
     var email = req.body.email;
 
     var user = require('../model/index').User;
+
+    var crypto = require('crypto');
+    var shasum = crypto.createHash('sha1');
+    shasum.update(password);
+    var d = shasum.digest('hex');
+
     user.create({
         name: name,
         email: email,
