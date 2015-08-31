@@ -60,6 +60,8 @@ router.get('/my', my.index);
 
 /*技术杂谈*/
 router.get('/program',program.index);
+router.get('/program/one',program.showOneProgram);
+
 
 /*todo:网站后台*/
 router.get('/admin', admin.showLogin);

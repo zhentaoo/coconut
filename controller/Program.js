@@ -11,3 +11,13 @@ exports.index = function (req, res, next) {
         }
     )
 };
+
+exports.showOneProgram = function (req, res, next) {
+    program.findById(req.query.id, function (err, docs) {
+        console.log(docs)
+        res.render('program/show.ejs', {
+            session: req.session,
+            program: docs
+        });
+    });
+};

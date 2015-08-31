@@ -1,13 +1,27 @@
-<% include ../layout/header %>
-<% include ../nav/topbar %>
+<% include ../layout/header.ejs %>
+<% include ../nav/topbar.ejs %>
 <div class="row">
     <div class="col-lg-9">
         <div class="block">
-<%  %>
-
+            <% for(var i = 0;i < program.length;i++ ){ %>
+            <div class="programDiv">
+                <div class="title">
+                    <%= program[i].title %>
+                </div>
+                <a href="/program/one?id=<%= program[i]._id %>" style="display: block">
+                    <div class="content">
+                        <%- program[i].content %>
+                    </div>
+                </a>
+            </div>
+            <% } %>
+            <br>
+            <br>
+            <br>
         </div>
     </div>
+
     <% include ../plugins/rightContent.html %>
 </div>
 
-<% include ../layout/footer %>
+<% include ../layout/footer.ejs %>

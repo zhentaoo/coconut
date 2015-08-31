@@ -71,7 +71,7 @@ h4 {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 20px;
-    border-radius: 5px;
+    border-radius: 3px;
 }
 
 .floatLeft {
@@ -175,6 +175,42 @@ a {
 }
 
 /*::selection {*/
-    /*color: white;*/
-    /*background: #57b382;*/
+/*color: white;*/
+/*background: #57b382;*/
 /*}*/
+
+.programDiv {
+    border-bottom: 1px solid #5eda9b;
+}
+
+.programDiv a{
+    text-decoration: none;
+}
+
+.programDiv:hover{
+    background: #f2f2f2;
+}
+
+.programDiv .title {
+    font-size: 19px;
+}
+
+.programDiv .content {
+    color: #3db4c6;
+    width:100%;
+    height: 85px;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    -o-text-overflow:ellipsis;
+    overflow: hidden;
+    display: block;
+}
+
+.oneProgram .title{
+    font-size: 19px;
+    margin-bottom: 10px;
+}
+
+.oneProgram .content{
+
+}

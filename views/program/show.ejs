@@ -1,0 +1,22 @@
+<% include ../layout/header.ejs %>
+<% include ../nav/topbar.ejs %>
+<div class="row">
+    <div class="col-lg-9">
+        <div class="block">
+            <div class="oneProgram">
+                <div class="title">
+                    <%= program.title %>
+                </div>
+                <div class="content">
+                    <%- program.content %>
+                </div>
+                <br>
+                <br>
+            </div>
+        </div>
+    </div>
+
+    <% include ../plugins/rightContent.html %>
+</div>
+
+<% include ../layout/footer.ejs %>
