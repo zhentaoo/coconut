@@ -1,10 +1,12 @@
 var express = require('express');
 var index = require('../controller/Index');
+var app = require('../controller/App');
 var sns = require('../controller/Sns');
 var chat = require('../controller/Chat');
 var game = require('../controller/Game');
 var software = require('../controller/Software');
 var crawler = require('../controller/Crawler');
+var app = require('../controller/App');
 
 var user = require('../controller/User');
 var auth = require('../middlewares/Auth');
@@ -39,6 +41,9 @@ router.get('/chat/privateChat', auth.userAuth, chat.privateChat);
 /*游戏*/
 router.get('/game', game.index);
 router.get('/game/fishman', game.fishman);
+
+// app
+router.get('/app/webrtc',app.index);
 
 /*软件*/
 router.get('/software', software.index);
