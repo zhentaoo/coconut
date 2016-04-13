@@ -48,6 +48,6 @@ var server = http.createServer(app).listen(config.server.port, function () {
     console.log('listen:' + config.server.port);
 });
 
-/*Create TCP server*/
+/*Create socket server*/
 var io = require('socket.io').listen(server);
 require('./tcp/server').runs(io);
