@@ -12,10 +12,10 @@ var user = require('../controller/User');
 var auth = require('../middlewares/Auth');
 var introduce = require('../controller/Introduce');
 var tools = require('../controller/Tools');
-var admin = require('../controller/admin');
-var my = require('../controller/my');
-var program=require('../controller/program');
-
+var admin = require('../controller/Admin');
+var my = require('../controller/My');
+var program=require('../controller/Program');
+c
 var router = express.Router();
 
 /*主页index*/
