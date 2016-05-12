@@ -15,7 +15,6 @@ var tools = require('../controller/Tools');
 var admin = require('../controller/Admin');
 var my = require('../controller/My');
 var program=require('../controller/Program');
-c
 var router = express.Router();
 
 /*主页index*/
