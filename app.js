@@ -26,7 +26,7 @@ app.use(express.static(path.join(__dirname, '/')));
 app.use(session({
     secret: '123',
     name: 'Coconut',
-    cookie: {maxAge: 600000},
+    cookie: {maxAge: 100000},
     resave: false,
     saveUninitialized: true
 }));
