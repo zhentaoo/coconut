@@ -2,7 +2,7 @@
   "apps": [{
     "name": "Coconut",
     "script": "app.js",
-    "cwd": "/Users/zhentaoo/Code//Users/zhentaoo/Code/Coconut",
+    "cwd": "/data/source/Coconut/",
     "exec_mode": "cluster",
     "instances": 0,
     "max_memory_restart": "1G",
