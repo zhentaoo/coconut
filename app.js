@@ -20,32 +20,50 @@ app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: false}));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, '/')));
-app.use(session({
-    secret: '123',
-    name: 'Coconut',
-    cookie: {maxAge: 100000},
-    resave: false,
-    saveUninitialized: true
+app.use(bodyParser.urlencoded({
+  extended: false
 }));
 
-app.use(function (req, res, next) {
-    var reqDomain = domain.create();
-    reqDomain.on('error', function (err) {
-        res.render('error');
-    });
-    reqDomain.run(next);
+/**Third-party middleware**/
+app.use(cookieParser());
+
+app.use(session({
+  secret: '123',
+  name: 'Coconut',
+  cookie: {
+    maxAge: 100000
+  },
+  resave: false,
+  saveUninitialized: true
+}));
+
+app.use(function(req, res, next) {
+  var reqDomain = domain.create();
+  reqDomain.on('error', function(err) {
+    res.render('error');
+  });
+  reqDomain.run(next);
 });
 
+/**Built-in middleware**/
+app.use(express.static(path.join(__dirname, '/')));
+
+/** Application-level middleware**/
 /*router*/
 app.use('/', webRoute);
 app.use('/api', apiRoute);
 
+/**Error-handling middleware**/
+// http://expressjs.com/en/guide/using-middleware.html#middleware.error-handling
+app.use(function(err, req, res, next) {
+  console.error(err.stack);
+  res.status(500).send('Something boom!!!')
+})
+
+
 /*Create HTTP server.*/
-var server = http.createServer(app).listen(config.server.port, function () {
-    console.log('listen:' + config.server.port);
+var server = http.createServer(app).listen(config.server.port, function() {
+  console.log('listen:' + config.server.port);
 });
 
 /*Create socket server*/
