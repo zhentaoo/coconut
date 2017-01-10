@@ -1,0 +1,83 @@
+/*footer*/
+.cc-footer {
+    width: 100%;
+    padding-top: 20px;
+    background-color: #3e3d49;
+    padding-bottom: 150px;
+}
+
+.footer {
+  width: 960px;
+  display: flex;
+  margin: auto;
+  justify-content: space-between;
+  color: white;
+}
+
+.footer img {
+  width: 180px;
+  height: 180px;
+}
+
+.ad-item {
+  display: block;
+  width: 200px;
+  background-color: #504f61;
+  color: #c3e5ff;
+  padding: 10px 10px 10px 10px;
+  margin-bottom: 5px;
+}
+
+.ad-item:hover {
+  color: white;
+}
+
+.ad-title {
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+/*header*/
+.cc-navbar {
+  color: white;
+  background-color: #353644;
+  height: 60px;
+  font-size: 15px;
+}
+
+.in-navbar {
+  display: flex;
+  width: 960px;
+  margin: auto;
+  justify-content: space-between;
+  padding-top: 10px;
+}
+
+.in-navbar > ul {
+  padding: 0;
+}
+
+.in-navbar > ul > li{
+  display:inline-block; /* 将链接设为块级元素 */
+  padding:8px 10px; /* 设置内边距 */
+  text-decoration:none; /* 去掉下划线 */
+  color: white;
+}
+
+.in-navbar > ul > li:first-child{
+  padding-left: 0;
+}
+
+.in-navbar > ul > li:last-child {
+  padding-right: 0;
+}
+
+.in-navbar a {
+  color: white;
+  text-decoration: none;
+}
+
+.in-navbar a:hover, .in-navbar a:focus{
+  text-decoration: none;
+  color: #57b382;
+}

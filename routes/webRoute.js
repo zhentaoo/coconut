@@ -20,7 +20,7 @@ var router = express.Router();
 /**Router-level middleware**/
 // a middleware sub-stack shows request info for any type of HTTP request to the /user/:id path
 /*主页index*/
-router.get('/', index.index);
+router.get('/', sns.index);
 router.get('/error', index.error);
 router.get('/login', index.showLogin);
 router.post('/login', index.login);
