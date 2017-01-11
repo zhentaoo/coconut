@@ -1,8 +1,11 @@
-.container {
-  width: 960px !important;
-  min-height: 500px;
-  padding: 20px 0 40px 0 !important;
+/*sns start*/
+.sns {
+  
 }
+
+/*sns end*/
+
+
 
 .col-md-9,.col-md-3,.col-lg-9,.col-lg-3 {
   padding: 0 !important;
@@ -227,8 +230,4 @@ a {
 .oneProgram .title{
     font-size: 19px;
     margin-bottom: 10px;
-}
-
-.oneProgram .content{
-
 }
