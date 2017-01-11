@@ -6,16 +6,17 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var http = require('http');
 var session = require('express-session');
-var config = require('./config/config.js');
 var domain = require('domain');
 
+var config = require('./src/config/config.js');
+
 /*route*/
-var webRoute = require('./routes/webRoute');
-var apiRoute = require('./routes/apiRoute');
+var webRoute = require('./src/routes/webRoute');
+var apiRoute = require('./src/routes/apiRoute');
 
 /*middleware*/
 var app = express();
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, './src/views'));
 app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
@@ -68,4 +69,4 @@ var server = http.createServer(app).listen(config.server.port, function() {
 
 /*Create socket server*/
 var io = require('socket.io').listen(server);
-require('./TCP/server').runs(io);
+require('./app/TCP/server').runs(io);
