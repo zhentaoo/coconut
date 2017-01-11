@@ -1,22 +1,20 @@
 <% include ../layout/header.ejs %>
-<% include ../nav/topbar.ejs %>
-<div class="row">
-    <div class="col-lg-9">
-        <div class="block">
-            <div class="oneProgram">
-                <div class="title">
-                    <%= program.title %>
-                </div>
-                <div class="content">
-                    <%- program.content %>
-                </div>
-                <br>
-                <br>
-            </div>
-        </div>
-    </div>
+<% include ../layout/topbar.ejs %>
 
-    <% include ../plugins/rightContent.html %>
+<div class="container-left">
+  <div class="oneProgram">
+      <div class="title">
+          <%= program.title %>
+      </div>
+      <div class="content">
+          <%- program.content %>
+      </div>
+      <br>
+      <br>
+  </div>
 </div>
 
-<% include ../layout/footer.ejs %>
+<div class="container-right">
+</div>
+
+<% include ../layout/footer %>

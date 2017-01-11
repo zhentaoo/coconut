@@ -10,7 +10,6 @@ var app = require('../controller/App');
 
 var user = require('../controller/User');
 var auth = require('../middlewares/Auth');
-var introduce = require('../controller/Introduce');
 var tools = require('../controller/Tools');
 var admin = require('../controller/Admin');
 var my = require('../controller/My');
@@ -51,9 +50,6 @@ router.get('/software', software.index);
 
 /*新闻*/
 router.get('/crawler', crawler.index);
-
-/*网站介绍*/
-router.get('/introduce', introduce.index);
 
 /*用户*/
 router.get('/user', user.index);

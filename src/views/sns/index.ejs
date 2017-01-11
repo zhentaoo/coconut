@@ -1,56 +1,53 @@
 <% include ../layout/header %>
-<% include ../nav/topbar %>
+<% include ../layout/topbar %>
 
-<div class="sns">
-
+<div class="container-left">
+  <table class="table table-hover ">
+      <thead>
+      <tr class="title">
+          <th>发起人</th>
+          <th>问题</th>
+          <th></th>
+      </tr>
+      </thead>
+      <%
+      var size = docs.length;
+      for(var i = size - 1;i > -1;i--){
+      %>
+      <tr>
+          <td>
+              <%= docs[i].author %>
+          </td>
+          <td>
+              <a href="/sns/Article?id=<%= docs[i]._id %>"><%= docs[i].title %></a>
+          </td>
+          <td>
+          </td>
+      </tr>
+      <% } %>
+  </table>
 </div>
 
-
-
-<table class="table table-hover ">
-    <thead>
-    <tr class="title">
-        <th>发起人</th>
-        <th>问题</th>
-        <th></th>
-    </tr>
-    </thead>
-    <%
-    var size = docs.length;
-    for(var i = size - 1;i > -1;i--){
-    %>
-    <tr>
-        <td>
-            <%= docs[i].author %>
-        </td>
-        <td>
-            <a href="/sns/Article?id=<%= docs[i]._id %>"><%= docs[i].title %></a>
-        </td>
-        <td>
-        </td>
-    </tr>
-    <% } %>
-</table>
-
-
-
-
-<nav>
-    <ul class="pagination">
-        <li>
-            <a href="#" aria-label="Previous">
-                <span aria-hidden="true">&laquo;</span>
-            </a>
-        </li>
-        <% for (var i = 1; i <= session.pageNum;i++){ %>
-        <li><a href="/sns?page=<%= i %>"><%= i %></a></li>
-        <% } %>
-        <li>
-            <a href="#" aria-label="Next">
-                <span aria-hidden="true">&raquo;</span>
-            </a>
-        </li>
-    </ul>
-</nav>
+<div class="container-right">
+  <table class="table table-hover ">
+      <thead>
+        <tr class="title">
+            <th>发起人</th>
+            <th>问题</th>
+            <th></th>
+        </tr>
+      </thead>
+      <%
+      var size = docs.length;
+      for(var i = size - 1;i > -1;i--){
+      %>
+        <tr>
+            <td><%= docs[i].author %></td>
+            <td><a href="/sns/Article?id=<%= docs[i]._id %>"><%= docs[i].title %></a></td>
+            <td></td>
+        </tr>
+      <% } %>
+  </table>
+</div>
 
 <% include ../layout/footer %>

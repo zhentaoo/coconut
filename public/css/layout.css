@@ -2,7 +2,6 @@
 .cc-footer {
     width: 100%;
     padding-top: 20px;
-    /*background: linear-gradient(to bottom, black,white);*/
     background-color: rgba(64, 180, 199, 0.25);
     padding-bottom: 50px;
     min-height: 450px;
@@ -35,11 +34,12 @@
 .ad-item {
   display: block;
   width: 200px;
-  background-color: rgba(64, 180, 199, 1);
+  background-color: #14a3b9;
   color: white;
   padding: 10px 10px 10px 10px;
   margin-bottom: 5px;
   font-size: 12px !important;
+  border-radius: 3px;
 }
 
 .ad-item:hover {
@@ -57,7 +57,7 @@
 /*header start*/
 .cc-navbar {
   color: white;
-  background-color: #40b4c7;
+  background-color: #3eb1c3;
   font-size: 15px;
 }
 
@@ -108,4 +108,14 @@
   width: 960px !important;
   min-height: 500px;
   padding: 15px 0 40px 0 !important;
+}
+
+.container-left {
+  width: 632px;
+  float: left;
+}
+
+.container-right {
+  width: 270px;
+  float: right;
 }
