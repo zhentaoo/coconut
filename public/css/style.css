@@ -1,5 +1,42 @@
+/*
+  文字color：
+ */
+
 /*sns start*/
 .sns {
+  margin-bottom: 30px;
+  line-height: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.sns:last-child {
+  border-bottom: none;
+}
+
+.sns-avatar img{
+  width: 30px;
+  height: 30px;
+  border-radius: 3px;
+  float: left;
+  /*float: left;*/
+}
+
+.sns-right {
+  margin-left: 60px;
+}
+
+.sns-category {
+  font-size: 12px;
+  color: #ababab;
+}
+
+.sns-title {
+  font-weight: bold;
+  color: #39a1b1;
+}
+
+.sns-content {
 
 }
 

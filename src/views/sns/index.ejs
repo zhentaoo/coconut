@@ -2,52 +2,41 @@
 <% include ../layout/topbar %>
 
 <div class="container-left">
-  <table class="table table-hover ">
-      <thead>
-      <tr class="title">
-          <th>发起人</th>
-          <th>问题</th>
-          <th></th>
-      </tr>
-      </thead>
-      <%
-      var size = docs.length;
-      for(var i = size - 1;i > -1;i--){
-      %>
-      <tr>
-          <td>
-              <%= docs[i].author %>
-          </td>
-          <td>
-              <a href="/sns/Article?id=<%= docs[i]._id %>"><%= docs[i].title %></a>
-          </td>
-          <td>
-          </td>
-      </tr>
-      <% } %>
-  </table>
+  <%
+  var size = docs.length;
+  for(var i = size - 1;i > -1;i--){
+  %>
+    <div class="sns">
+      <div class="sns-avatar">
+        <img src="/public/img/Avatar.gif" alt="">
+      </div>
+
+      <div class="sns-right">
+        <div class="sns-category">
+          来自分类: node
+        </div>
+
+        <div class="sns-title">
+          <a href="/sns/Article?id=<%= docs[i]._id %>"><%= docs[i].title %></a>
+        </div>
+
+        <div class="sns-author">
+          <%= docs[i].author %>
+        </div>
+      </div>
+
+    </div>
+  <% } %>
 </div>
 
 <div class="container-right">
-  <table class="table table-hover ">
-      <thead>
-        <tr class="title">
-            <th>发起人</th>
-            <th>问题</th>
-            <th></th>
-        </tr>
-      </thead>
-      <%
-      var size = docs.length;
-      for(var i = size - 1;i > -1;i--){
-      %>
-        <tr>
-            <td><%= docs[i].author %></td>
-            <td><a href="/sns/Article?id=<%= docs[i]._id %>"><%= docs[i].title %></a></td>
-            <td></td>
-        </tr>
-      <% } %>
-  </table>
+  <div>分类</div>
+  <span class="tag my-tag">node</span>
+  <span class="tag green-tag">HTML5</span>
+  <span class="tag yellow-tag">VUE</span>
+  <span class="tag green-tag">Element</span>
+  <span class="tag green-tag">Mongo</span>
+  <span class="tag blue-tag">Nginx</span>
 </div>
 
 <% include ../layout/footer %>

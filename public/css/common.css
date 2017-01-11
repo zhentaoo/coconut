@@ -1,0 +1,23 @@
+.tag {
+  padding: 2px 6px;
+  color: white;
+  border-radius: 3px;
+  margin: 5px 3px;
+  display: inline-block;
+}
+
+.green-tag {
+  background-color: #4caf50;
+}
+
+.yellow-tag {
+  background-color: #FFC107;
+}
+
+.blue-tag {
+  background-color: #2196F3;
+}
+
+.my-tag {
+  background-color: #3eb1c3;
+}
