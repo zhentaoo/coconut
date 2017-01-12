@@ -36,14 +36,15 @@
   width: 200px;
   background-color: #14a3b9;
   color: white;
-  padding: 10px 10px 10px 10px;
+  padding: 10px;
   margin-bottom: 5px;
   font-size: 12px !important;
   border-radius: 3px;
+  transition: 0.3s;
 }
 
 .ad-item:hover {
-  color: #6d6d6d;
+  text-decoration:none
 }
 
 .ad-title {
