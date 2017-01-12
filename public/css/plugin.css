@@ -1,0 +1,38 @@
+/*问答*/
+.category {
+  margin-bottom: 30px;
+}
+
+.category-latest {
+  margin-bottom: 30px;
+}
+
+.category-hot {
+  margin-bottom: 30px;
+}
+
+/*博文归档*/
+.archive {
+  margin-bottom: 30px;
+}
+
+.archive-latest {
+  margin-bottom: 30px;
+}
+
+.archive-hot {
+  margin-bottom: 30px;
+}
+
+.archive-latest ul {
+  padding-left: 18px;
+}
+
+.archive-latest li {
+  padding: 5px;
+}
+
+.archive-latest li:hover {
+  background-color:rgba(64, 180, 199, 0.25);
+  cursor: pointer;
+}

@@ -10,7 +10,13 @@ exports.index = function(req, res, next) {
       if (err) {
         res.redirect('/error');
       }
-      console.log('docs:', docs);
+      console.log(docs);
+      docs.forEach(el => {
+        if (el.content) {
+          el.content = el.content.replace(/<[^>]+>/g,"").slice(0,400).trim();
+        }
+      })
+
       res.render('sns/index', {
         session: req.session,
         docs: docs

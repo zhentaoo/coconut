@@ -15,11 +15,7 @@
 </div>
 
 <div class="container-right">
-  <% if(!session.isAuth){ %>
-  <% include ../../plugins/login.html %>
-  <% }else{ %>
-  <% include ../../plugins/personal.ejs %>
-  <% } %>
+  <% include ../../plugins/category %>
 </div>
 <% include ../../layout/footer %>
 

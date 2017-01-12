@@ -9,6 +9,7 @@ var session = require('express-session');
 var domain = require('domain');
 
 var config = require('./src/config/config.js');
+require('./src/tools/string.js');
 
 /*route*/
 var webRoute = require('./src/routes/webRoute');

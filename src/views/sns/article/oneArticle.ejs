@@ -6,21 +6,6 @@
 </div>
 
 <div class="container-right">
-  <% if(session.isAuth){ %>
-  <div class="block">
-      <a href="/sns/sendArticle">
-          <button class="btn btn-success" style="width: 100%">发帖</button>
-      </a>
-  </div>
-  <% } %>
-
-  <div class="block">
-      <% if(!session.isAuth){ %>
-      <% include ../../plugins/login.html %>
-      <% }else{ %>
-      <% include ../../plugins/personal.ejs %>
-      <% } %>
-  </div>
-
+  <% include ../../plugins/category %>
 </div>
 <% include ../../layout/footer %>
