@@ -7,24 +7,29 @@
   for(var i = size - 1;i > -1;i--){
   %>
     <div class="sns">
-      <div class="sns-avatar">
-        <img src="/public/img/Avatar.gif" alt="">
+      <div class="sns-left">
+        <div class="sns-avatar">
+          <img src="/public/img/Avatar.gif" alt="">
+        </div>
+        <div class="sns-author">
+          <%= docs[i].author %>
+        </div>
       </div>
+
 
       <div class="sns-right">
         <div class="sns-category">
-          来自分类: node
+          来自: node
         </div>
 
         <div class="sns-title">
           <a href="/sns/Article?id=<%= docs[i]._id %>"><%= docs[i].title %></a>
         </div>
 
-        <div class="sns-author">
-          <%= docs[i].author %>
+        <div class="sns-content">
+          <%- docs[i].content %>
         </div>
       </div>
-
     </div>
   <% } %>
 </div>

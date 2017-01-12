@@ -1,29 +1,26 @@
 <% include ../../layout/header %>
 <% include ../../layout/topbar %>
-<div class="row">
-    <div class="col-lg-9">
-        <div class="block">
-            <h4>标题:</h4><%= docs.title %><br><br>
-            <h4>内容:</h4> <%- docs.content %><br>
-        </div>
-    </div>
+<div class="container-left">
+  <h4>标题:</h4><%= docs.title %><br><br>
+  <h4>内容:</h4> <%- docs.content %><br>
+</div>
 
-    <div class="col-lg-3">
-        <% if(session.isAuth){ %>
-        <div class="block">
-            <a href="/sns/sendArticle">
-                <button class="btn btn-success" style="width: 100%">发帖</button>
-            </a>
-        </div>
-        <% } %>
+<div class="container-right">
+  <% if(session.isAuth){ %>
+  <div class="block">
+      <a href="/sns/sendArticle">
+          <button class="btn btn-success" style="width: 100%">发帖</button>
+      </a>
+  </div>
+  <% } %>
 
-        <div class="block">
-            <% if(!session.isAuth){ %>
-            <% include ../../plugins/login.html %>
-            <% }else{ %>
-            <% include ../../plugins/personal.ejs %>
-            <% } %>
-        </div>
-    </div>
+  <div class="block">
+      <% if(!session.isAuth){ %>
+      <% include ../../plugins/login.html %>
+      <% }else{ %>
+      <% include ../../plugins/personal.ejs %>
+      <% } %>
+  </div>
+
 </div>
 <% include ../../layout/footer %>

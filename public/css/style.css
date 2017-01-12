@@ -8,6 +8,7 @@
   line-height: 20px;
   padding-bottom: 10px;
   border-bottom: 1px solid #e6e6e6;
+  transition: 0.3s;
 }
 
 .sns:last-child {
@@ -19,11 +20,16 @@
   height: 30px;
   border-radius: 3px;
   float: left;
-  /*float: left;*/
+}
+
+.sns-left {
+  width: 40px;
+  float: left;
 }
 
 .sns-right {
   margin-left: 60px;
+  transition: 0.3s;
 }
 
 .sns-category {
@@ -33,11 +39,21 @@
 
 .sns-title {
   font-weight: bold;
-  color: #39a1b1;
+  color: #14a3b9;
+  margin-bottom: 10px;
+}
+
+.sns-title a {
+  color: #14a3b9;
 }
 
 .sns-content {
+  max-height: 100px;
+  overflow: hidden;
+}
 
+.sns-right:hover {
+  background-color: #f2f2f2;
 }
 
 /*sns end*/
