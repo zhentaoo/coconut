@@ -2,6 +2,7 @@ var program = require('../model').Program;
 
 exports.index = function (req, res, next) {
    //res.send(req.session.name);
+   console.log(req);
     program.find({}, function (err, docs) {
             res.render('program/index', {
                 session: req.session,
