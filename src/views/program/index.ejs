@@ -1,19 +1,20 @@
 <% include ../layout/header.ejs %>
 <% include ../layout/topbar.ejs %>
 <div class="container-left">
+
   <% for(var i = 0;i < program.length;i++ ){ %>
-  <div class="programDiv">
+  <a class="programDiv"  href="/program/one?id=<%= program[i]._id %>">
       <div class="title">
           <%= program[i].title %>
       </div>
-      <a href="/program/one?id=<%= program[i]._id %>" style="display: block">
-          <div class="content">
-              <%- program[i].content %>
-          </div>
-      </a>
-  </div>
+      <div class="content">
+          <%- program[i].content %>
+      </div>
+  </a>
   <% } %>
+
 </div>
+
 <div class="container-right">
   <% include ../plugins/archive %>
 </div>

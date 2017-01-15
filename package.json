@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node app.js",
+    "start": "node-dev app.js",
     "test":"echo test"
   },
   "dependencies": {
