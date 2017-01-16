@@ -2,15 +2,14 @@
 <% include ../layout/topbar %>
 
 <div class="container-left">
-  <div class="block">
-      <% include plugins/publicChat.ejs %>
-  </div>
-  <div class="block" id="">
+  <% include plugins/publicChat.ejs %>
+
+  <!-- <div class="block" id="">
       <% include plugins/privateChat.ejs %>
-  </div>
+  </div> -->
 </div>
 
-<div class="container-right">
+<!-- <div class="container-right">
   <% if(session.isAuth){ %>
   <div class="block">
       <button type="button" class="btn btn-success bigBtn" data-toggle="modal" data-target=".bs-example-modal-sm">
@@ -30,9 +29,9 @@
           </div>
       </div>
   </div>
-  <% } %>
+  <% } %> -->
 
-  <div class="block">
+  <div class="container-right">
       <h4>在线人数</h4>
 
       <h3 id="onlineNum">0</h3>

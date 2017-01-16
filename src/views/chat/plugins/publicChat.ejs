@@ -1,4 +1,5 @@
-<h4>群聊</h4>
+<h4>群聊<% if(!session.isAuth){ %><span style="color: orange;font-size:13px;margin-left:10px;">请先登录</span><% } %></h4>
+
 
 <div class="chatContent" id="publicChat">
 </div>

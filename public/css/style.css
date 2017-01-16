@@ -202,8 +202,11 @@ h4 {
 }
 
 .chatContent {
-    height: 350px;
+    min-height: 450px;
     overflow: auto;
+    border: 1px solid rgba(128, 128, 128, 0.27);
+    margin-bottom: 4px;
+    border-radius: 4px;
 }
 
 .privateChatContent {
