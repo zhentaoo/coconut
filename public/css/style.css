@@ -268,7 +268,7 @@ a {
 }
 
 .programDiv .title {
-    font-size: 19px;
+    font-size: 20px;
     color: #14a3b9;
 }
 
@@ -276,6 +276,7 @@ a {
     color: black;
     padding-top: 10px;
     width:100%;
+    line-height: 26px;
 }
 
 .oneProgram .title{
