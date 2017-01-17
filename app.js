@@ -33,7 +33,7 @@ app.use(session({
   secret: '123',
   name: 'Coconut',
   cookie: {
-    maxAge: 100000
+    maxAge: 1000000
   },
   resave: false,
   saveUninitialized: true

@@ -1,8 +1,6 @@
 var program = require('../model').Program;
 
 exports.index = function(req, res, next) {
-  //res.send(req.session.name);
-  // console.log(req);
   program
     .find({}, function(err, docs) {
       docs.forEach(el => {
@@ -11,6 +9,7 @@ exports.index = function(req, res, next) {
         }
       })
 
+      res.cookie('isVisit', 1, {maxAge: 60 * 1000});
       res.render('program/index', {
         session: req.session,
         program: docs
