@@ -16,7 +16,7 @@ var request = require('request');
  */
 exports.index = function (req, res, next) {
     // github调用我的接口给我用户code
-    console.log(req.query);
+    console.log('code:', req.query.code);
 
     var url = 'https://github.com/login/oauth/access_token';
     var code = req.query.code;
@@ -32,12 +32,12 @@ exports.index = function (req, res, next) {
         }
       },
       function (err, response ,body) {
-        console.log('access_token:', body);
+        console.log('access_token:', body.access_token);
         // 我调用github接口获取userInfo
         request.get('https://api.github.com/user?access_token='+body.access_token,
           function (error, response, body) {
             console.log('userinfo:', body);
-            res.cookie('github',{code: code, userinfo: body }, {maxAge: 60 * 1000});
+            res.cookie('github',{code: code, userinfo: body }, {maxAge: 60 * 10000});
             res.redirect('/program');
           }
         )

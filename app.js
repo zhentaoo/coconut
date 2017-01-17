@@ -10,6 +10,7 @@ var domain = require('domain');
 
 var config = require('./src/config/config.js');
 require('./src/tools/string.js');
+var auth = require('./src/middlewares/Auth');
 
 /*route*/
 var webRoute = require('./src/routes/webRoute');
@@ -50,6 +51,7 @@ app.use(function(req, res, next) {
 /**Built-in middleware**/
 app.use(express.static(path.join(__dirname, '/')));
 
+app.use(auth.GithubAuth);
 /** Application-level middleware**/
 /*router*/
 app.use('/', webRoute);
@@ -60,8 +62,7 @@ app.use('/api', apiRoute);
 app.use(function(err, req, res, next) {
   console.error(err.stack);
   res.status(500).send('Something boom!!!')
-})
-
+});
 
 /*Create HTTP server.*/
 var server = http.createServer(app).listen(config.server.port, function() {
