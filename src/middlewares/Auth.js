@@ -20,6 +20,6 @@ exports.adminAuth = function(req, res, next) {
 
 /*是否登录github*/
 exports.GithubAuth = function(req, res, next) {
-  console.log('github auth md',req.cookies.github.userinfo);
+  console.log('github auth md',req.cookies.github);
   next();
 }
