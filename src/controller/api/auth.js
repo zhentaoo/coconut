@@ -26,7 +26,7 @@ exports.index = function (req, res, next) {
     request.post({
         headers: {
           'Accept': 'application/json'
-        }
+        },
         url:url,
         formData: {
           code: code,
