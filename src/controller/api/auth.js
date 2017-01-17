@@ -32,9 +32,9 @@ exports.index = function (req, res, next) {
         }
       },
       function (err, response ,body) {
-        console.log(body);
+        console.log('body:',body);
         var access_token = querystring.parse(body).access_token;
-        
+        console.log('access_token:', 'https://api.github.com/user?access_token='+access_token);
         // 我调用github接口获取userInfo
         request.get('https://api.github.com/user?access_token='+access_token,
           function (error, response, body) {
