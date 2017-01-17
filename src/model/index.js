@@ -46,8 +46,10 @@ require('./User');
 require('./Article');
 require('./ChatRoom');
 require('./Program');
+require('./ProgramCategory');
 
 exports.User = mongoose.model('User');
 exports.Article = mongoose.model('Article');
 exports.ChatRoom = mongoose.model('ChatRoom');
 exports.Program = mongoose.model('Program');
+exports.ProgramCategory = mongoose.model('ProgramCategory');

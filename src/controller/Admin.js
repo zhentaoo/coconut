@@ -1,7 +1,7 @@
 var article = require('../model/index').Article;
 var program = require('../model/index').Program;
+var programCategory = require('../model/index').ProgramCategory;
 
-/*后台首页:登录*/
 exports.showLogin = function (req, res, next) {
     res.render('admin/login.ejs');
 };
@@ -17,7 +17,6 @@ exports.login = function (req, res, next) {
     }
 };
 
-/*编程博文相关：增删改查*/
 exports.programIndex = function (req, res, next) {
     program.find({}, function (err, docs) {
         console.log(docs);
@@ -45,13 +44,23 @@ exports.showProgramAdd = function (req, res, next) {
 exports.programAdd = function (req, res, next) {
     var title = req.body.title;
     var content = req.body.content;
-    program.create({
-        title: title,
-        content: content
-    }, function (err, docs) {
-        req.program = docs;
-        res.redirect('/admin/program');
-    });
+    var category = req.body.category;
+
+    programCategory.create(
+      {category: category},
+      {programInfos:{title: title}},
+      // {upsert:true},
+      function (err, docs) {
+        program.create({
+            title: title,
+            content: content
+        }, function (err, docs) {
+            req.program = docs;
+            res.redirect('/admin/program');
+        });
+      }
+    )
+
 };
 
 exports.programDel = function (req, res, next) {
@@ -63,7 +72,6 @@ exports.programDel = function (req, res, next) {
     });
 };
 
-/*用户管理：增删改查*/
 exports.user = function (req, res, next) {
     res.render('admin/content/user/index');
 };
