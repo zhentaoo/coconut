@@ -57,3 +57,7 @@ exports.index = function (req, res, next) {
       })
 
   };
+
+  exports.weibo = function (req, res, next) {
+
+  }

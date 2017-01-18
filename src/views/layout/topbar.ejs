@@ -7,22 +7,41 @@
           <li><a href="/chat" >聊天</a></li>
       </ul>
       <ul>
-        <% if(!session.isAuth){ %>
+        <wb:login-button type="3,2" onlogin="login" onlogout="logout">登录按钮</wb:login-button>
+        <!-- <wb:login-button type="3,1" onlogin="login" onlogout="logout">登录按钮</wb:login-button> -->
+        <!-- <% if(!session.isAuth){ %>
         <li><a href="https://github.com/login/oauth/authorize?client_id=cd4237027fe35177c068" target="_blank" >GitHub登录</a></li>
         <% }else{ %>
         <li>
-          <!-- <a href="/sns/sendArticle"><button class="btn">发帖</button></a> -->
+          <a href="/sns/sendArticle"><button class="btn">发帖</button></a>
         </li>
         <li><a href="#"  id="userName">
                 <%= session.name %>
             </a></li>
-        <!-- <li><a href="/logout" >
-                退出</a></li> -->
-        <% } %>
+        <li><a href="/logout" >
+                退出</a></li>
+        <% } %> -->
 
       </ul>
   </div>
 </div>
+
+<script type="text/javascript">
+WB2.anyWhere(function(W){
+    W.widget.connectButton({
+        id: "wb_connect_btn",
+        type:"3,4",
+        callback : {
+            login:function(o){	//登录后的回调函数
+              console.log('weibo zhentaoo login success');
+            },
+            logout:function(){	//退出后的回调函数
+              console.log('weibo zhentaoo logout success');
+            }
+        }
+    });
+});
+</script>
 
 <div class="cc-container">
   <div class="container">
