@@ -1,0 +1,62 @@
+<% include layout/header %>
+<% include layout/topbar %>
+
+<div class="container-left">
+
+  <dl>
+    <dt>网站的简单介绍</dt>
+    <dd>欢迎来到zhentaoo的博客，博主做为一个前端(但不限于前端 或者说是个不纯的前端)，会把一些开发经验记录在这里。</dd>
+    <dd>
+      日常工作中，个人使用云笔记的频率比博客要高出很多，在这里也推荐大家平时多用用云笔记，
+      对个人的学习／成长都是一个不错的辅助工具，毕竟有很多记录是私有化的，并不方便公开。
+      博主可能会在个人闲暇的时候会把笔记整理成文章分享给大家....
+    </dd>
+    <dd>
+      网站的主要功能是写博客，
+      顺带着一个在线聊天功能，不会保存聊天记录，想体验的话，用weibo登录一下即可。
+      目前来说，工作还是比较繁忙的，没有精力和时间，暂时不准备做评论等功能。
+      有问题的话可以到 <a href="https://github.com/zhentaoo/Coconut/issues" target="_blank">https://github.com/zhentaoo/Coconut/issues</a>
+      给我提issue，欢迎各位！下面也有我的联系方式，有问题，或者你觉得我们有同样的兴趣爱好人可以加我weixin。
+    </dd>
+    <dd>
+      博客的搭建技术：bootstrap＋express＋mongodb，域名在万网，服务器在 阿里云，项目是开源的，
+      项目源码： <a href="https://github.com/zhentaoo/Coconut" target="_blank">https://github.com/zhentaoo/Coconut</a>，
+      对源码有兴趣的欢迎到github clone下来学习，对网站部署搭建有兴趣的也可以找我讨论。
+    </dd>
+    <dt>个人联系方式</dt>
+    <dd>
+      微博： <a href="http://weibo.com/zhentaoo" target="_blank">http://weibo.com/zhentaoo</a>
+    </dd>
+    <dd>
+      知乎： <a href="https://www.zhihu.com/people/zhentaoo/activities" target="_blank">https://www.zhihu.com/people/zhentaoo/activities</a>
+    </dd>
+    <dd>
+      微信:
+      <img class="wechat-img" src="/public/img/weixin.png" alt="">
+
+    </dd>
+  </dl>
+
+</div>
+
+<% include layout/footer %>
+<style media="screen">
+  dt {
+    margin-bottom: 10px;
+    margin-top: 20px;
+  }
+  dt:first-child {
+    margin-top: 0px;
+  }
+  dd {
+    margin-bottom: 10px;
+    line-height: 22px;
+    text-indent: 30px;
+  }
+  .wechat-img {
+    /*display: inline-block;*/
+    height: 180px;
+    width: 180px;
+    margin-left: 10px;
+  }
+</style>

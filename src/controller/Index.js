@@ -98,3 +98,9 @@ exports.logout = function (req, res, next) {
     req.session.destroy();
     res.redirect('/program');
 };
+
+exports.about = function (req, res, next) {
+  res.render('about', {
+      session: req.session
+  });
+};

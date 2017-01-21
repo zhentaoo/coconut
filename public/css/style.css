@@ -253,7 +253,7 @@ a {
 /*background: #57b382;*/
 /*}*/
 
-.programDiv {
+.programDiv,.oneProgramDiv {
     margin-bottom: 30px;
     display: block;
 }
@@ -267,19 +267,14 @@ a {
     text-decoration: none;
 }
 
-.programDiv .title {
+.programDiv .title,.oneProgramDiv .title {
     font-size: 20px;
     color: #14a3b9;
 }
 
-.programDiv .content {
+.programDiv .content,.oneProgramDiv .content {
     color: black;
     padding-top: 10px;
     width:100%;
     line-height: 26px;
-}
-
-.oneProgram .title{
-    font-size: 19px;
-    margin-bottom: 10px;
 }

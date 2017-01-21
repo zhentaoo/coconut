@@ -69,6 +69,9 @@ router.get('/program/one', program.showOneProgram);
 router.get('/admin', admin.showLogin);
 router.post('/admin/login', admin.login);
 
+/*关于*/
+router.get('/about', index.about);
+
 /*todo:博文修改的新增接口*/
 router.get('/admin/program', auth.adminAuth, admin.programIndex);
 
