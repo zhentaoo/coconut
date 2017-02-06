@@ -60,6 +60,9 @@ router.get('/tools', tools.index);
 /*个人主页*/
 router.get('/my', my.index);
 
+/*新手指南*/
+router.get('learn', tools.learn);
+
 /*技术杂谈*/
 router.get('/program', program.index);
 router.get('/program/one', program.showOneProgram);
