@@ -1,4 +1,5 @@
 var program = require('../model').Program;
+var tag = require('../model').tag;
 
 exports.index = function(req, res, next) {
   program
@@ -8,10 +9,23 @@ exports.index = function(req, res, next) {
           el.content = el.content.replace(/<[^>]+>/g,"").slice(0,300).trim();
         }
       })
-
-      res.cookie('isVisit', 1, {maxAge: 60 * 1000});
-      res.render('program/index', {
-        program: docs
+      tag.find({}, function (err, tags) {
+        tags.forEach(function (el) {
+          var rd = Math.random();
+          if (rd < 0.25){
+            el.color = 'green-tag';
+          }else if (rd < 0.5){
+            el.color = 'yellow-tag';
+          }else if (rd < 0.75) {
+            el.color = 'blue-tag';
+          }else if (rd < 1) {
+            el.color = 'my-tag';
+          }
+        })
+        res.render('program/index', {
+          program: docs,
+          tags: tags
+        });
       });
     })
     .sort({'date.updateAt': -1})
