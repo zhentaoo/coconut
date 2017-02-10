@@ -37,7 +37,7 @@ exports.index = function(req, res, next) {
 };
 
 exports.showOneProgram = function(req, res, next) {
-  program.findById(req.query.id, function(err, docs) {
+  program.findById(req.query.id, function(err, one) {
     tag.find({}, function (err, tags) {
       tags.forEach(function (el) {
         var rd = Math.random();
@@ -51,11 +51,14 @@ exports.showOneProgram = function(req, res, next) {
           el.color = 'my-tag';
         }
       })
-
-      res.render('program/show.ejs', {
-        program: docs,
-        tags: tags
-      });
+      var queryObj = req.query.tag ? {category:req.query.tag} : {};
+      program.find(queryObj,function (err, program) {
+        res.render('program/show.ejs', {
+          one: one,
+          program: program,
+          tags: tags
+        });
+      }).limit(15);;
     });
 
   });
