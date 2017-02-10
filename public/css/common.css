@@ -7,6 +7,10 @@
   display: inline-block;
 }
 
+.tag a,.tag a:hover {
+  color: white;
+  text-decoration: none;
+}
 .green-tag {
   background-color: #4caf50;
 }

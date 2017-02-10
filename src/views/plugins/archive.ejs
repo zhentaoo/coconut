@@ -2,10 +2,8 @@
   <div>
     <strong>归档</strong>
   </div>
-  <%
-    for(var i = 0; i < tags.length;i++) {
-  %>
-    <span class="tag <%=tags[i].color%>"><%=tags[i].name%></span>
+  <%for(var i = 0; i < tags.length;i++) {%>
+    <span class="tag <%=tags[i].color%>"><a onclick="jump('<%=tags[i].name%>')"><%=tags[i].name%></a></span>
   <%}%>
 </div>
 
@@ -19,6 +17,14 @@
     <% } %>
   </ul>
 </div>
-<script type="text/javascript">
-  $.ajax();
+<script>
+  var jump = function (tag) {
+    if (location.href.indexOf('/program/one') > -1) {
+      location.replace(location.href.split('&tag')[0] + "&tag="+tag);
+    } else if (location.href.indexOf('?tag') > -1){
+      location.replace(location.href.split('?tag')[0] + "?tag="+tag);
+    } else {
+      location.replace(location.href + "?tag="+tag);
+    }
+  }
 </script>
