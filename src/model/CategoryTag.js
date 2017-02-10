@@ -1,9 +1,8 @@
 var mongoose = require('mongoose');
 
 var time = Date.parse(new Date());
-var programCategorySchema = new mongoose.Schema({
-    category: String,
-    programInfos: [Object],
+var categoryTagSchema = new mongoose.Schema({
+    name: String,
     date: {
         createAt: {
             type: String,
@@ -17,7 +16,7 @@ var programCategorySchema = new mongoose.Schema({
             type: String,
             default: time
         }
-    }
+    },
 });
 
-mongoose.model('ProgramCategory', programCategorySchema);
+mongoose.model('CategoryTag', categoryTagSchema);

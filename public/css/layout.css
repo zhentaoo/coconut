@@ -1,10 +1,17 @@
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+}
+
 /*footer*/
 .cc-footer {
     width: 100%;
     padding-top: 20px;
     background-color: rgba(64, 180, 199, 0.15);
     padding-bottom: 50px;
-    min-height: 450px;
+    min-height: 300px;
 }
 
 .footer {
@@ -105,10 +112,11 @@
 .cc-container {
   background-color: #f9f9f9;
   color: #6d6d6d;
+  min-height: 85%;
 }
 .container {
   width: 960px !important;
-  min-height: 500px;
+  min-height: 85%;
   padding: 15px 0 40px 0 !important;
 }
 

@@ -51,7 +51,6 @@ app.use(function(req, res, next) {
 /**Built-in middleware**/
 app.use(express.static(path.join(__dirname, '/public')));
 
-app.use(auth.GithubAuth);
 /** Application-level middleware**/
 /*router*/
 app.use('/', webRoute);

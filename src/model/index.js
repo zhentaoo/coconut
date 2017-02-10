@@ -42,14 +42,9 @@ mongoose.connect(url, function (err) {
 
 //mongoose.on('error', console.error.bind(console, '连接错误'));
 
-require('./User');
-require('./Article');
 require('./ChatRoom');
 require('./Program');
-require('./ProgramCategory');
+require('./CategoryTag');
 
-exports.User = mongoose.model('User');
-exports.Article = mongoose.model('Article');
-exports.ChatRoom = mongoose.model('ChatRoom');
 exports.Program = mongoose.model('Program');
-exports.ProgramCategory = mongoose.model('ProgramCategory');
+exports.CategoryTag = mongoose.model('CategoryTag');
