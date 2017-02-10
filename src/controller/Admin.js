@@ -1,6 +1,6 @@
 var article = require('../model/index').Article;
 var program = require('../model/index').Program;
-var programCategory = require('../model/index').ProgramCategory;
+var tag = require('../model/index').tag;
 
 exports.showLogin = function (req, res, next) {
     res.render('admin/login.ejs');
@@ -45,22 +45,13 @@ exports.programAdd = function (req, res, next) {
     var title = req.body.title;
     var content = req.body.content;
     var category = req.body.category;
-
-    programCategory.create(
-      {category: category},
-      {programInfos:{title: title}},
-      // {upsert:true},
-      function (err, docs) {
-        program.create({
-            title: title,
-            content: content
-        }, function (err, docs) {
-            req.program = docs;
-            res.redirect('/admin/program');
-        });
-      }
-    )
-
+    program.create({
+      category: category,
+      content: content,
+      title: title
+    },function () {
+      res.redirect('/admin/program');
+    });
 };
 
 exports.programDel = function (req, res, next) {
@@ -72,10 +63,24 @@ exports.programDel = function (req, res, next) {
     });
 };
 
-exports.user = function (req, res, next) {
-    res.render('admin/content/user/index');
-};
+/* tag */
+exports.showTags = function (req, res, next) {
+  tag.find({}, function(err, tags) {
+    res.render('admin/content/tag', {
+      tags: tags
+    });
+  });
+}
 
-exports.article = function (req, res, next) {
-    res.render('admin/content/article/index');
-};
+exports.showAddTags = function (req, res, next) {
+  var name = req.body.name;
+  res.render('admin/content/tag/add');
+}
+
+exports.addTags = function (req, res, next) {
+  var tagname = req.body.name;
+  console.log(tagname);
+  tag.create({name: tagname},function () {
+    res.redirect('/admin/tag');
+  })
+}

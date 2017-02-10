@@ -33,18 +33,19 @@ var config = require('../config/config.js');
 var url = config.db.host + config.db.dbname;
 console.log(url);
 
-mongoose.connect(url, function (err) {
-    if (err) {
-        console.error('connect to %s error: ', url, err.message);
-        process.exit(1);
-    }
+mongoose.connect(url, function(err) {
+  if (err) {
+    console.error('connect to %s error: ', url, err.message);
+    process.exit(1);
+  }
 });
 
 //mongoose.on('error', console.error.bind(console, '连接错误'));
 
 require('./ChatRoom');
 require('./Program');
-require('./CategoryTag');
+require('./tag');
 
 exports.Program = mongoose.model('Program');
-exports.CategoryTag = mongoose.model('CategoryTag');
+exports.ChatRoom = mongoose.model('ChatRoom');
+exports.tag = mongoose.model('tag');

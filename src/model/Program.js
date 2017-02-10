@@ -4,6 +4,7 @@ var time = Date.parse(new Date());
 var programSchema = new mongoose.Schema({
     title: String,
     content: String,
+    category: String,
     date: {
         createAt: {
             type: String,

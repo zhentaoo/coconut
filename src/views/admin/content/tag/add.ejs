@@ -1,0 +1,12 @@
+<% include ../../layout/adminHeader.ejs %>
+<% include ../../nav/adminSidebar.ejs %>
+<% include ../../nav/adminTopbar.ejs %>
+
+<div class="content">
+    <form action="/admin/tag/add" method="post">
+        name:<input name="name" class="form-control" required="required"/>
+        <button class="btn btn-success" type="submit">添加</button>
+    </form>
+</div>
+<% include ../../layout/adminFooter.ejs %>
+<script src="/js/ueditor.js"></script>

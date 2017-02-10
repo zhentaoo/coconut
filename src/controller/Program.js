@@ -11,7 +11,6 @@ exports.index = function(req, res, next) {
 
       res.cookie('isVisit', 1, {maxAge: 60 * 1000});
       res.render('program/index', {
-        session: req.session,
         program: docs
       });
     })

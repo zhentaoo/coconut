@@ -40,7 +40,9 @@ router.post('/admin/program/edit', auth.adminAuth, admin.programEdit);
 router.get('/admin/program/delete', auth.adminAuth, admin.programDel);
 
 /*todo:博文分类*/
-router.get('/admin/tag',auth.adminAuth);
+router.get('/admin/tag',auth.adminAuth,admin.showTags);
+router.get('/admin/tag/add',auth.adminAuth,admin.showAddTags);
+router.post('/admin/tag/add',auth.adminAuth,admin.addTags);
 router.get('/admin/tag/edit',auth.adminAuth);
 router.get('/admin/tag/delete',auth.adminAuth);
 
