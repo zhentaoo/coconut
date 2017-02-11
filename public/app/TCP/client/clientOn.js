@@ -1,13 +1,13 @@
 $(function () {
         var url = window.location.host;
         var socket = io.connect(url);
-        /*在线人数*/
+        
         socket.on('newOne', function (msg) {
             console.log('newOne:' + msg);
             document.getElementById('onlineNum').innerHTML = msg;
         });
 
-        /*公共聊天室*/
+
         socket.on('publicMySay', function (datas) {
             $('#publicChat').append('<div class="floatRight"><div class="mySpeak">' + datas.data + '</div>' + '<div class="mySpeakName">:' + datas.name + '</div></div>');
             var div = document.getElementById('publicChat');
@@ -22,7 +22,7 @@ $(function () {
             console.log(datas);
         });
 
-        /*私人聊天室*/
+
         socket.on('privateJoin', function (data) {
             console.log(data);
         });

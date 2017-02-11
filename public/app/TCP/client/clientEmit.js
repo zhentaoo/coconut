@@ -1,10 +1,14 @@
 $(function () {
     var url = window.location.host;
     var socket = io.connect(url);
-    /*客户端登录*/
-    socket.emit('join', $("#userName").text());
 
-    /*公共聊天室*/
+    var loginName = 'random';
+    if (document.querySelector('.login_a')) {
+      loginName = document.querySelector('.login_a').title;
+    }
+
+    socket.emit('join', loginName);
+
     $('#publicSay').submit(function () {
         var content = $('#publicSayContent').val();
         socket.emit('publicSay', content);
@@ -12,7 +16,6 @@ $(function () {
         return false;
     });
 
-    /*私人聊天室*/
     if (window.location.pathname == '/chat/privateChat') {
         console.log('privateChat');
         var id = GetQueryString("id");
