@@ -2,11 +2,6 @@ $(function () {
     var url = window.location.host;
     var socket = io.connect(url);
 
-    var loginName = 'random';
-    if (document.querySelector('.login_a')) {
-      loginName = document.querySelector('.login_a').title;
-    }
-
     socket.emit('join', loginName);
 
     $('#publicSay').submit(function () {

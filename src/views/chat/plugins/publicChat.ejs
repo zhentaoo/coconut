@@ -13,9 +13,9 @@
     </div>
 </form>
 <script>
+  window.loginName = '';
   setTimeout(
     function(){
-      var loginName = '';
       if (document.querySelector('.login_a')) {
         loginName = document.querySelector('.login_a').title;
       }
@@ -24,7 +24,7 @@
         document.querySelector('#publicSayContent').removeAttribute('disabled');
       }
     },
-    5111
+    3000
   );
 
 </script>
