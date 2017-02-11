@@ -1,6 +1,21 @@
 var program = require('../model').Program;
 var tag = require('../model').tag;
 
+function rdColor() {
+  var color = '';
+  var rd = Math.random();
+  if (rd < 0.25){
+    color = 'green-tag';
+  }else if (rd < 0.5){
+    color = 'yellow-tag';
+  }else if (rd < 0.75) {
+    color = 'blue-tag';
+  }else if (rd < 1) {
+    color = 'my-tag';
+  }
+  return color;
+}
+
 exports.index = function(req, res, next) {
   var queryObj = {}
   if (req.query.tag) {
@@ -15,16 +30,7 @@ exports.index = function(req, res, next) {
       })
       tag.find({}, function (err, tags) {
         tags.forEach(function (el) {
-          var rd = Math.random();
-          if (rd < 0.25){
-            el.color = 'green-tag';
-          }else if (rd < 0.5){
-            el.color = 'yellow-tag';
-          }else if (rd < 0.75) {
-            el.color = 'blue-tag';
-          }else if (rd < 1) {
-            el.color = 'my-tag';
-          }
+          el.color = rdColor();
         })
         res.render('program/index', {
           program: docs,
@@ -40,16 +46,7 @@ exports.showOneProgram = function(req, res, next) {
   program.findById(req.query.id, function(err, one) {
     tag.find({}, function (err, tags) {
       tags.forEach(function (el) {
-        var rd = Math.random();
-        if (rd < 0.25){
-          el.color = 'green-tag';
-        }else if (rd < 0.5){
-          el.color = 'yellow-tag';
-        }else if (rd < 0.75) {
-          el.color = 'blue-tag';
-        }else if (rd < 1) {
-          el.color = 'my-tag';
-        }
+        el.color = rdColor();
       })
       var queryObj = req.query.tag ? {category:req.query.tag} : {};
       program.find(queryObj,function (err, program) {
