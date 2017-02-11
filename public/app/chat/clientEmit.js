@@ -2,28 +2,30 @@ $(function () {
     var url = window.location.host;
     var socket = io.connect(url);
 
-    socket.emit('join', loginName);
+    setTimeout(function () {
+      socket.emit('join', loginName);
 
-    $('#publicSay').submit(function () {
-        var content = $('#publicSayContent').val();
-        socket.emit('publicSay', content);
-        $('#publicSayContent').val('');
-        return false;
-    });
+      $('#publicSay').submit(function () {
+          var content = $('#publicSayContent').val();
+          socket.emit('publicSay', content);
+          $('#publicSayContent').val('');
+          return false;
+      });
 
-    if (window.location.pathname == '/chat/privateChat') {
-        console.log('privateChat');
-        var id = GetQueryString("id");
-        console.log(id);
-        socket.emit('join private room', id);
-    }
+      if (window.location.pathname == '/chat/privateChat') {
+          console.log('privateChat');
+          var id = GetQueryString("id");
+          console.log(id);
+          socket.emit('join private room', id);
+      }
 
-    $('#privateSay').submit(function () {
-        var content = $("#mySay").val();
-        socket.emit('privateSay', content);
-        $('#mySay').val(' ');
-        return false;
-    });
+      $('#privateSay').submit(function () {
+          var content = $("#mySay").val();
+          socket.emit('privateSay', content);
+          $('#mySay').val(' ');
+          return false;
+      });
+    },3500);
 });
 
 
