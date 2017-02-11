@@ -13,11 +13,21 @@
   </div>
   <ul>
     <% for(var i = 0;i < program.length;i++){%>
-      <li><%=program[i].title%></li>
+      <li onclick="liJump('<%=program[i]._id%>')"><%=program[i].title%></li>
     <% } %>
   </ul>
 </div>
 <script>
+  var liJump = function (_id) {
+      console.log(_id);
+      if (location.href.indexOf('tag') == -1) {
+        location.replace(location.origin+"/program/one?id="+_id);
+      } else {
+        var tag = location.search.split("tag=")[1];
+        location.replace(location.origin+"/program/one?id="+_id + "&tag=" + tag);
+      }
+  }
+
   var jump = function (tag) {
     if (location.href.indexOf('/program/one') > -1) {
       location.replace(location.href.split('&tag')[0] + "&tag="+tag);
@@ -27,4 +37,5 @@
       location.replace(location.href + "?tag="+tag);
     }
   }
+
 </script>
