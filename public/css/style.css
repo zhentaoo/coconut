@@ -258,6 +258,10 @@ a {
     display: block;
 }
 
+.programDiv title,.oneProgramDiv title {
+  display: block;
+}
+
 .programDiv a{
     color: red;
 }

@@ -1,5 +1,7 @@
-<h4>群聊<% if(!session.isAuth){ %><span style="color: orange;font-size:13px;margin-left:10px;">请先登录</span><% } %></h4>
-
+<h4>
+  群聊
+  <span id="please_login" style="color: orange;font-size:13px;margin-left:10px;">请先登录</span>
+</h4>
 
 <div class="chatContent" id="publicChat">
 </div>
@@ -12,19 +14,3 @@
         </span>
     </div>
 </form>
-<script>
-  window.loginName = '';
-  setTimeout(
-    function(){
-      if (document.querySelector('.login_a')) {
-        loginName = document.querySelector('.login_a').title;
-      }
-      if (loginName) {
-        document.querySelector('#sayBtn').removeAttribute('disabled');
-        document.querySelector('#publicSayContent').removeAttribute('disabled');
-      }
-    },
-    3000
-  );
-
-</script>
