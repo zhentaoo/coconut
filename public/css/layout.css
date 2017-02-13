@@ -99,12 +99,28 @@ body {
 .in-navbar a {
   color: white;
   text-decoration: none;
+  transition: 1s;
 }
 
 .in-navbar a:hover, .in-navbar a:focus{
   text-decoration: none;
   color: black;
 }
+
+.header-active {
+  background: white;
+  transition: 1s;
+}
+
+.header-active a {
+  color: #14a3b9;
+  transition: 1s;
+}
+
+.header-active-a-margin-left a{
+  margin-left: 9px;
+}
+
 /*header end*/
 
 
