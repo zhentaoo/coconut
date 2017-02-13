@@ -6,7 +6,6 @@
 .sns {
   margin-bottom: 30px;
   line-height: 20px;
-  /*padding-bottom: 10px;*/
   transition: 0.3s;
 }
 
@@ -250,7 +249,7 @@ a {
 
 
 .programDiv,.oneProgramDiv {
-    margin-bottom: 15px;
+    margin-bottom: 25px;
     display: block;
     min-height: 100px;
     padding: 1px 5px 10px 5px;
