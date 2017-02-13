@@ -43,7 +43,8 @@ router.get('/admin/program/del', auth.adminAuth, admin.programDel);
 router.get('/admin/tag',auth.adminAuth,admin.showTags);
 router.get('/admin/tag/add',auth.adminAuth,admin.showAddTags);
 router.post('/admin/tag/add',auth.adminAuth,admin.addTags);
-router.get('/admin/tag/edit',auth.adminAuth);
-router.get('/admin/tag/delete',auth.adminAuth);
+router.get('/admin/tag/edit',auth.adminAuth,admin.showEditTags);
+router.post('/admin/tag/edit',auth.adminAuth,admin.editTags);
+router.get('/admin/tag/del',auth.adminAuth,admin.delTag);
 
 module.exports = router;

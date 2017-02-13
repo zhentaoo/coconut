@@ -109,10 +109,36 @@ exports.showAddTags = function(req, res, next) {
 
 exports.addTags = function(req, res, next) {
   var tagname = req.body.name;
-  console.log(tagname);
   tag.create({
     name: tagname
   }, function() {
     res.redirect('/admin/tag');
   })
+}
+
+exports.showEditTags = function (req, res, next) {
+  var _id = req.query._id;
+  console.log(_id);
+  tag.findById(_id,function (err, tag) {
+    res.render('admin/content/tag/edit',{
+      tag: tag
+    });
+  });
+}
+
+exports.editTags = function (req, res, next) {
+  var _id = req.body._id;
+  var name = req.body.name;
+
+  tag.findOneAndUpdate({_id: _id},{name: name},function (err, result) {
+    res.redirect('/admin/tag');
+  });
+}
+
+exports.delTag = function (req, res, next) {
+  tag.remove({
+    _id: req.query._id
+  },function (err, result) {
+    res.redirect('/admin/tag');
+  });
 }

@@ -1,31 +1,33 @@
 <% include ../../layout/adminHeader.ejs %>
-  <% include ../../nav/adminSidebar.ejs %>
-    <% include ../../nav/adminTopbar.ejs %>
+<% include ../../nav/adminSidebar.ejs %>
+<% include ../../nav/adminTopbar.ejs %>
 
-      <div class="content">
-        <a href="/admin/tag/add">
-          <button class="btn btn-success">添加新的标签</button>
-        </a>
+<div class="content">
+  <a href="/admin/tag/add">
+    <button class="btn btn-success">添加新的标签</button>
+  </a>
 
-        <br>
-        <br>
-        <h4>已有程序标签：</h4>
-        <table class="table table-hover">
-          <thead>
-            <th>标签</th>
-            <th>操作</th>
-          </thead>
-          <% for(var i = 0;i < tags.length;i++){ %>
-            <tr>
-              <td>
-                <%= tags[i].name %>
-              </td>
-              <td>
-                <button class="btn btn-xs btn-info">修改</button> |
-                <button class="btn btn-xs btn-info">删除</button>
-              </td>
-            </tr>
-            <% } %>
-        </table>
-      </div>
-      <% include ../../layout/adminFooter.ejs %>
+  <br>
+  <br>
+  <h4>已有程序标签：</h4>
+  <table class="table table-hover">
+    <thead>
+      <th>标签</th>
+      <th>操作</th>
+    </thead>
+    <% for(var i = 0;i < tags.length;i++){ %>
+      <tr>
+        <td>
+          <%= tags[i].name %>
+        </td>
+        <td>
+          <a href="/admin/tag/edit?_id=<%= tags[i]._id %>"><button class="btn btn-xs btn-info">修改</button></a>
+          |
+          <a href="/admin/tag/del?_id=<%= tags[i]._id %>"><button class="btn btn-xs btn-danger">删除</button></a>
+        </td>
+      </tr>
+      <% } %>
+  </table>
+</div>
+
+<% include ../../layout/adminFooter.ejs %>

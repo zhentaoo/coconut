@@ -1,0 +1,12 @@
+<% include ../../layout/adminHeader.ejs %>
+<% include ../../nav/adminSidebar.ejs %>
+<% include ../../nav/adminTopbar.ejs %>
+
+<div class="content">
+    <form action="/admin/tag/edit" method="post">
+        <input type="text" name="_id" value="<%=tag._id%>" hidden>
+        name:<input name="name" class="form-control" required="required" value="<%=tag.name%>"/>
+        <button class="btn btn-success" type="submit">编辑</button>
+    </form>
+</div>
+<% include ../../layout/adminFooter.ejs %>
