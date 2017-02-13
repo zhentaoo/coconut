@@ -2,6 +2,7 @@ var article = require('../model/index').Article;
 var program = require('../model/index').Program;
 var tag = require('../model/index').tag;
 
+// 后台登录页面
 exports.showLogin = function(req, res, next) {
   res.render('admin/login.ejs');
 };
@@ -17,6 +18,7 @@ exports.login = function(req, res, next) {
   }
 };
 
+// 随笔首页
 exports.programIndex = function(req, res, next) {
   program.find({}, function(err, docs) {
     console.log(docs);
@@ -27,6 +29,7 @@ exports.programIndex = function(req, res, next) {
   });
 };
 
+// 修改随笔
 exports.showProgramEdit = function(req, res, next) {
   program.find({
     _id: req.query._id
@@ -59,6 +62,7 @@ exports.programEdit = function(req, res, next) {
   )
 };
 
+// 新建随笔
 exports.showProgramAdd = function(req, res, next) {
   res.render('admin/content/program/add', {
     session: req.program
@@ -79,8 +83,9 @@ exports.programAdd = function(req, res, next) {
   });
 };
 
+// 删除随笔
 exports.programDel = function(req, res, next) {
-  var _id = req.query.id;
+  var _id = req.query._id;
   program.remove({
     "_id": _id
   }, function(err) {
@@ -88,7 +93,7 @@ exports.programDel = function(req, res, next) {
   });
 };
 
-/* tag */
+/* 随笔的相关标签 */
 exports.showTags = function(req, res, next) {
   tag.find({}, function(err, tags) {
     res.render('admin/content/tag', {

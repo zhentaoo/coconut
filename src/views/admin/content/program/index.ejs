@@ -25,11 +25,15 @@
             <td>
                 <a href="/admin/program/edit?_id=<%= docs[i]._id %>"><button class="btn btn-xs btn-info">修改</button></a>
                 |
-                <button class="btn btn-xs btn-info">删除</button>
+                <a onclick="del('<%=docs[i]._id %>')"><button class="btn btn-xs btn-danger">删除</button></a>
             </td>
         </tr>
         <% } %>
     </table>
 </div>
 <% include ../../layout/adminFooter.ejs %>
-<!--<script src="/js/ueditor.js"></script>-->
+<script>
+  function del(_id) {
+    location.href = "/admin/program/del?_id="+_id
+  }
+</script>

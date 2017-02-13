@@ -37,7 +37,7 @@ router.get('/admin/program/add', auth.adminAuth, admin.showProgramAdd);
 router.post('/admin/program/add', auth.adminAuth, admin.programAdd);
 router.get('/admin/program/edit', auth.adminAuth, admin.showProgramEdit);
 router.post('/admin/program/edit', auth.adminAuth, admin.programEdit);
-router.get('/admin/program/delete', auth.adminAuth, admin.programDel);
+router.get('/admin/program/del', auth.adminAuth, admin.programDel);
 
 /*todo:博文分类*/
 router.get('/admin/tag',auth.adminAuth,admin.showTags);

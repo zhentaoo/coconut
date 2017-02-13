@@ -3,7 +3,7 @@
     <strong>归档</strong>
   </div>
   <%for(var i = 0; i < tags.length;i++) {%>
-    <span class="tag <%=tags[i].color%>"><a onclick="jump('<%=tags[i].name%>')"><%=tags[i].name%></a></span>
+    <a onclick="jump('<%=tags[i].name%>')"><span class="tag <%=tags[i].color%>"><%=tags[i].name%></span></a>
   <%}%>
 </div>
 
