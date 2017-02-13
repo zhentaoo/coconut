@@ -2,11 +2,19 @@
 <% include ../layout/topbar.ejs %>
 <div class="container-left">
 
-  <% for(var i = 0;i < program.length;i++ ){ %>
+  <%
+    for(var i = 0;i < program.length;i++ ){
+      var date = new Date(Number.parseInt(program[i].date.updateAt));
+  %>
   <a class="programDiv"  href="/program/one?id=<%= program[i]._id %>">
-      <title class="title">
+      <h5 class="title">
           <%= program[i].title %>
-      </title>
+          <span class="program-des">
+            <span style="margin-right:20px">标签:<%= program[i].category %></span>
+            最后更新:<%= date.getFullYear()+'/'+date.getMonth()+"/"+date.getDate() %>
+          </span>
+          <span></span>
+      </h5>
       <div class="content">
           <%- program[i].content %>
       </div>

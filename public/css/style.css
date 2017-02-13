@@ -248,22 +248,28 @@ a {
 .tools a {
 }
 
-/*::selection {*/
-/*color: white;*/
-/*background: #57b382;*/
-/*}*/
 
 .programDiv,.oneProgramDiv {
-    margin-bottom: 30px;
+    margin-bottom: 15px;
     display: block;
+    min-height: 100px;
+    padding: 1px 5px 10px 5px;
 }
 
 .programDiv title,.oneProgramDiv title {
   display: block;
 }
 
+.programDiv .program-des{
+  font-size: 13px;
+  color: rgba(128, 128, 128, 0.73);
+  font-weight: normal;
+  float: right;
+  padding-top: 2px;
+}
+
 .programDiv a{
-    color: red;
+  color: red;
 }
 
 .programDiv:hover{
