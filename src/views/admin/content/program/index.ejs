@@ -23,7 +23,7 @@
                 +parseInt(new Date(parseInt(docs[i].date.updateAt)).getMonth()+1)+"-"
                 +new Date(parseInt(docs[i].date.updateAt)).getDate() %></td>
             <td>
-                <button class="btn btn-xs btn-info">修改</button>
+                <a href="/admin/program/edit?_id=<%= docs[i]._id %>"><button class="btn btn-xs btn-info">修改</button></a>
                 |
                 <button class="btn btn-xs btn-info">删除</button>
             </td>
