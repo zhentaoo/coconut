@@ -23,20 +23,6 @@ if (location.pathname.indexOf('/about') != -1) {
   document.querySelector('#tools').className = 'header-active';
 }
 
-WB2.anyWhere(function(W){
-    W.widget.connectButton({
-        id: "wb_connect_btn",
-        type:"3,4",
-        callback : {
-            login:function(o){	//登录后的回调函数
-              console.log('weibo zhentaoo login success');
-            },
-            logout:function(){	//退出后的回调函数
-              console.log('weibo zhentaoo logout success');
-            }
-        }
-    });
-});
 </script>
 
 <style media="screen">
