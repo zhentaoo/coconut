@@ -255,16 +255,20 @@ a {
     padding: 1px 5px 10px 5px;
 }
 
-.programDiv title,.oneProgramDiv title {
-  display: block;
-}
-
-.programDiv .program-des{
+.title .program-des{
   font-size: 13px;
   color: rgba(128, 128, 128, 0.73);
   font-weight: normal;
   float: right;
   padding-top: 2px;
+}
+
+.title .share {
+  position: relative;
+  top: 7px;
+  left: 20px;
+  font-weight: normal;
+  font-size: 12px;
 }
 
 .programDiv a{

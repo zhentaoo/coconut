@@ -3,9 +3,12 @@
 
 <div class="container-left">
   <div class="oneProgramDiv">
-      <title class="title">
+      <h5 class="title">
           <%= one.title %>
-      </title>
+          <span class="share">
+            <wb:share-button appkey="554164338" addition="simple" type="button"></wb:share-button>
+          </span>
+      </h5>
       <div class="content">
           <%- one.content %>
       </div>
