@@ -2,7 +2,7 @@ var config = {};
 
 config.db = {
     host: 'mongodb://127.0.0.1:27017/',
-    dbname: 'N-Blog'
+    dbname: 'coconut'
 };
 
 config.route = {
