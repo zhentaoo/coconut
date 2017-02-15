@@ -1,4 +1,4 @@
-# Coconut
+# N-Blog
 
 ## 网站的技术结构
 * nodejs(express) + mongodb

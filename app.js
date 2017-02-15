@@ -59,7 +59,7 @@ app.use(cookieParser());
 
 app.use(session({
   secret: '123',
-  name: 'Coconut',
+  name: 'N-Blog',
   cookie: {
     maxAge: 1000000
   },

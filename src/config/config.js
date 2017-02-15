@@ -2,7 +2,7 @@ var config = {};
 
 config.db = {
     host: 'mongodb://127.0.0.1:27017/',
-    dbname: 'coconut'
+    dbname: 'N-Blog'
 };
 
 config.route = {
@@ -14,7 +14,7 @@ config.route = {
 
 config.session = {
     secret: '123456',
-    key: 'coconut',
+    key: 'N-Blog',
     dbname: 'session'
 };
 
