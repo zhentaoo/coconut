@@ -1,10 +1,10 @@
 .content {
-    padding: 20px 20px 150px 50px; /*ÉÏ£¬ÓÒ,ÏÂ£¬×ó*/
+    padding: 20px 20px 150px 50px;
     left: 180px;
     top: 45px;
     color: #4ba575;
     position: absolute;
-    width: 80%;
+    width: 702px;
 }
 
 .sideBar {
@@ -55,4 +55,3 @@
 .adminContentTitle {
     color: blue;
 }
-
