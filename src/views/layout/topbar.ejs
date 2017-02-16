@@ -3,7 +3,8 @@
       <ul class="">
           <li id="about"><a href="/about">ZhentaoO</a></li>
           <li id="program"><a href="/program">随笔</a></li>
-          <li id="chat"><a href="/chat" >聊天</a></li>
+          <li id="resource"><a href="/resource">大前端</a></li>
+          <li id="chat"><a href="/chat" style="">聊天</a></li>
           <li id="tools"><a href="http://tools.zhentaoo.com" target="_blank" >工具</a></li>
       </ul>
       <ul>
@@ -21,7 +22,10 @@ if (location.pathname.indexOf('/about') != -1) {
   document.querySelector('#chat').className = 'header-active';
 } else if (location.pathname.indexOf('tools') != -1) {
   document.querySelector('#tools').className = 'header-active';
+} else if (location.pathname.indexOf('resource') != -1) {
+  document.querySelector('#resource').className = 'header-active';
 }
+
 </script>
 
 <style media="screen">
