@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>前端技能图普</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="baidu_union_verify" content="1c7892dcc35c0c050e543843ce226a28">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="zhentaoo的个人博客">
+    <meta name="keywords" content="个人博客，nodejs，zhentaoo">
+    <meta property="wb:webmaster" content="898c62d3c65c3949" />
+
+    <link href="/css/layout.css" rel="stylesheet">
+    <link href="/css/program.css" rel="stylesheet">
+    <link href="/css/common.css" rel="stylesheet">
+    <link href="/css/plugin.css" rel="stylesheet">
+    <link href="/css/chat.css" rel="stylesheet">
+    <html xmlns:wb="http://open.weibo.com/wb">
+    <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=554164338" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+
+    <script src="/js/socket.js"></script>
+    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+
+    <link rel="icon" href="/img/z-logo.png" type="image/x-icon"/>
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?b56d58eb9b155bb93221933343a9c83d";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+
+</head>
+<body>
+
+<% include layout/topbar %>
+
+<dl>
+  <dt>大前端技能图谱</dt>
+  <dd>
+    废话不多说，以下是我目前学习过的一些技能，大家可以过一下，
+    脑图对于梳理知识体系的帮助还是很大的，
+    如果看的不清楚可以把图片保存下来
+  </dd>
+</dl>
+<div class="feimg">
+  <img src="/img/bigfe.png" alt="大前端知识体系脑图">
+</div>
+<% include layout/footer %>
+<style media="screen">
+  .feimg {
+    width: 960px;
+    min-height: 500px;
+    overflow: auto;
+  }
+
+  dt {
+    font-size: 15px;
+    margin-bottom: 10px;
+    margin-top: 35px;
+  }
+  dt:first-child {
+    margin-top: 0px;
+  }
+  dd {
+    margin-bottom: 10px;
+    line-height: 25px;
+    text-indent: 30px;
+  }
+  .wechat-img {
+    height: 180px;
+    width: 180px;
+    margin-left: 10px;
+  }
+</style>

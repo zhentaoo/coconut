@@ -92,10 +92,6 @@ body {
   padding-left: 0;
 }
 
-.in-navbar > ul > li:last-child {
-  padding-right: 0;
-}
-
 .in-navbar a {
   color: white;
   text-decoration: none;

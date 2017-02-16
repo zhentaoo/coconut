@@ -17,6 +17,7 @@ router.get('/register', index.showRegist);
 router.post('/register', index.regist);
 router.get('/logout', index.logout);
 router.get('/about', index.about);
+router.get('/resource', index.resource);
 
 /*聊天*/
 router.get('/chat', chat.index);

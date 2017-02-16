@@ -108,3 +108,7 @@ exports.about = function(req, res, next) {
     session: req.session
   });
 };
+
+exports.resource = function(req, res, next) {
+  res.render('resource');
+};
