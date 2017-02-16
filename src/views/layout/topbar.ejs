@@ -15,7 +15,7 @@
 <script type="text/javascript">
 if (location.pathname.indexOf('/about') != -1) {
   document.querySelector('#about').className = 'header-active header-active-a-margin-left';
-} else if (location.pathname.indexOf('/program') != -1) {
+} else if (location.pathname.indexOf('/program') != -1 || location.pathname == '/') {
   document.querySelector('#program').className = 'header-active';
 } else if (location.pathname.indexOf('/chat') != -1) {
   document.querySelector('#chat').className = 'header-active';

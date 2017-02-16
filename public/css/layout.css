@@ -108,12 +108,12 @@ body {
 }
 
 .header-active {
-  background: white;
+  background: rgb(67, 199, 216);
   transition: 1s;
 }
 
 .header-active a {
-  color: #14a3b9;
+  color: white;
   transition: 1s;
 }
 
@@ -126,7 +126,6 @@ body {
 
 /*content*/
 .cc-container {
-  background-color: #f9f9f9;
   color: #6d6d6d;
   min-height: 70%;
 }

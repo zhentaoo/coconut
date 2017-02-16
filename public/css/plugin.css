@@ -33,6 +33,6 @@
 }
 
 .archive-latest li:hover {
-  background-color:rgba(64, 180, 199, 0.15);
+  background-color: rgba(64, 180, 199, 0.15);
   cursor: pointer;
 }
