@@ -1,0 +1,46 @@
+.programDiv,.oneProgramDiv {
+    transition: 0.3s;
+    margin-bottom: 25px;
+    display: block;
+    min-height: 100px;
+    padding: 1px 5px 10px 5px;
+}
+
+.title .program-des{
+  font-size: 13px;
+  color: rgba(128, 128, 128, 0.73);
+  font-weight: normal;
+  float: right;
+  padding-top: 2px;
+}
+
+.title .share {
+  position: relative;
+  top: 7px;
+  left: 20px;
+  font-weight: normal;
+  font-size: 12px;
+}
+
+.programDiv a{
+  color: red;
+}
+
+.programDiv:hover{
+    background: #f2f2f2;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.programDiv .title,.oneProgramDiv .title {
+    font-size: 20px;
+    color: #14a3b9;
+}
+
+.programDiv .content,.oneProgramDiv .content {
+    color: black;
+    padding-top: 10px;
+    width:100%;
+    line-height: 26px;
+}
