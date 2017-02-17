@@ -1,24 +1,23 @@
 <div class="cc-navbar">
   <div class="in-navbar">
       <ul class="">
-          <li id="about"><a href="/about"><img src="/img/header2.png" alt="斟淘随笔"></a></li>
+          <li id="about"><a href="/about" style="color: yellow;font-size: 16px;font-family: initial;">青菜叶子</a></li>
           <li id="program"><a href="/program">随笔</a></li>
+          <li id="trans"><a href="/trans" style="">文译</a></li>
           <li id="resource"><a href="/resource">技能图谱</a></li>
-          <li id="chat"><a href="/chat" style="">聊天</a></li>
       </ul>
       <ul>
+        <a href="/chat" style="margin-right: 30px;font-size: 14px;position: relative;top: 2px;color: white;">在线聊天</a>
         <wb:login-button type="3,2" onlogin="login" onlogout="logout">登录按钮</wb:login-button>
       </ul>
   </div>
 </div>
 
 <script type="text/javascript">
-if (location.pathname.indexOf('/about') != -1) {
-  document.querySelector('#about').className = 'header-active header-active-a-margin-left';
-} else if (location.pathname.indexOf('/program') != -1 || location.pathname == '/') {
+if (location.pathname.indexOf('/program') != -1 || location.pathname == '/') {
   document.querySelector('#program').className = 'header-active';
-} else if (location.pathname.indexOf('/chat') != -1) {
-  document.querySelector('#chat').className = 'header-active';
+} else if (location.pathname.indexOf('/trans') != -1) {
+  document.querySelector('#trans').className = 'header-active';
 } else if (location.pathname.indexOf('tools') != -1) {
   document.querySelector('#tools').className = 'header-active';
 } else if (location.pathname.indexOf('resource') != -1) {
@@ -29,6 +28,9 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
 </script>
 
 <style media="screen">
+.title {
+
+}
 .WB_widgets {
   padding: 7px 0 0 0;
 }

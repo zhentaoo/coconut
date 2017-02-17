@@ -87,6 +87,8 @@ body {
   text-decoration:none; /* 去掉下划线 */
   color: white;
   margin-right: 10px;
+  box-sizing: border-box;
+  height: 38px;
 }
 
 .in-navbar > ul > li:first-child{

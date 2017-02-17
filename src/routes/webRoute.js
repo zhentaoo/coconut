@@ -4,6 +4,7 @@ var chat = require('../controller/Chat');
 var auth = require('../middlewares/Auth');
 var admin = require('../controller/Admin');
 var program = require('../controller/Program');
+var static = require('../controller/Static');
 var router = express.Router();
 
 /**Router-level middleware**/
@@ -16,8 +17,11 @@ router.post('/login', index.login);
 router.get('/register', index.showRegist);
 router.post('/register', index.regist);
 router.get('/logout', index.logout);
-router.get('/about', index.about);
-router.get('/resource', index.resource);
+
+/*静态文章*/
+router.get('/about', static.about);
+router.get('/resource', static.resource);
+router.get('/trans', static.trans);
 
 /*聊天*/
 router.get('/chat', chat.index);
