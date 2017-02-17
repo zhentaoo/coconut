@@ -1,6 +1,7 @@
 var article = require('../model/index').Article;
 var program = require('../model/index').Program;
 var tag = require('../model/index').tag;
+var admin = require('../config/admin');
 
 // 后台登录页面
 exports.showLogin = function(req, res, next) {
@@ -10,7 +11,7 @@ exports.showLogin = function(req, res, next) {
 exports.login = function(req, res, next) {
   console.log(req.body.password);
   console.log(req.body.name);
-  if (req.body.password == "123456" && req.body.name == 'leo') {
+  if (req.body.password == admin.pwd && req.body.name == admin.name) {
     req.session.isAuth = 2;
     res.redirect('/admin/program');
   } else {
