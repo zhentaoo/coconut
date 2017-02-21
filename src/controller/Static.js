@@ -1,6 +1,6 @@
 exports.about = function(req, res, next) {
   res.render('about', {
-    session: req.session
+    one: {title: '关于'}
   });
 };
 
