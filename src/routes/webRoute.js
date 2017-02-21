@@ -21,7 +21,7 @@ router.get('/logout', index.logout);
 /*静态文章*/
 router.get('/about', static.about);
 router.get('/resource', static.resource);
-router.get('/trans', static.trans);
+router.get('/trans/pm2', static.trans);
 
 /*聊天*/
 router.get('/chat', chat.index);

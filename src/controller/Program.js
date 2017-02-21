@@ -33,6 +33,7 @@ exports.index = function(req, res, next) {
           el.color = rdColor();
         })
         res.render('program/index', {
+          one: {title: '随笔'},
           program: docs,
           tags: tags
         });

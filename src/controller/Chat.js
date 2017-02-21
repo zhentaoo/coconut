@@ -3,7 +3,8 @@ exports.index = function (req, res, next) {
     chatRoom.find({}, function (err, docs) {
         res.render('chat/index', {
             session: req.session,
-            roomList: docs
+            roomList: docs,
+            one: {title: '聊天室'}
         });
     });
 };
