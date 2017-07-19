@@ -7,6 +7,18 @@
 
 <br><br>
 
+## 运行说明
+  1. npm install -g node-dev 安装node-dev,方便开发
+  2. 在src/config 目录下新建 admin.js，在登陆后台时会用到
+      ```
+        module.exports = {
+          name : 'xxx',
+          pwd: 'xxxxxxx'
+        }
+      ```
+  3. 安装mongodb，并启动
+  4. npm start启动项目
+
 ## 网站的几个基础功能：
   * 第三方登录接入
     * weibo 登录接入
@@ -26,7 +38,7 @@
   * 聊天功能
   - ![](./public/img/readme.png)
 
-##想说的话
+## 想说的话
     * 这是一个纯技术性的个人博客，旨在学习nodejs，提高自己的综合能力
     * 本人会把一些技术文章学习心德发布到这里，大家没事可以来吐槽／学习一下
     * 有人愿意交流的话，可以访问网站，下面有QQ群可以加入
