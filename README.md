@@ -2,7 +2,7 @@
 
 ## 网站的技术结构
 * nodejs(express) + mongodb
-* 网站地址：http://www.zhentaoo.com
+* 网站地址：http://blog.zhentaoo.com
 * 服务器在阿里云，网站已备案.
 
 ## 运行说明
