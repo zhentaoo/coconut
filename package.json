@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node-dev app.js",
-    "test": "echo test"
+    "test": "echo test",
+    "production": "pm2 start pm2.json"
   },
   "dependencies": {
     "accepts": "*",
