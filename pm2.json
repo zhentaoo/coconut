@@ -1,11 +1,8 @@
 {
   "apps": [{
-    "name": "N-Blog",
-    "script": "app.js",
-    "cwd": "/data/source/N-Blog/",
-    "exec_mode": "cluster",
-    "instances": 0,
-    "max_memory_restart": "1G",
+    "name": "coconut",
+    "script": "./app.js",
+    "max_memory_restart": "100M",
     "autorestart": true,
     "node_args": [],
     "args": [],
